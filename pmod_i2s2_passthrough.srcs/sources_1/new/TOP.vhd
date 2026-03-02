@@ -38,7 +38,7 @@ entity TOP is
             r_sclk: out std_logic;
             r_mclk: out std_logic;
             r_lrclk: out std_logic;
-            r_data: out std_logic; --in for actual use
+            r_data: in std_logic; --in for actual use
             
             t_sclk: out std_logic;
             t_mclk: out std_logic;
@@ -76,7 +76,7 @@ component I2S_in is
             r_sclk: out std_logic;
             r_mclk: out std_logic;
             r_lrclk: out std_logic;
-            r_data: out std_logic;
+            r_data: in std_logic;
             left_valid : out std_logic;
             right_valid : out std_logic;
             left_reg_output : out std_logic_vector(23 downto 0);
@@ -118,7 +118,7 @@ r_lrclk <= lrclk_s;
 t_sclk  <= sclk_s;
 t_mclk  <= mclk_s;
 t_lrclk <= lrclk_s;
-r_data <= r_data_s; --r_data_s <= r_data;
+r_data_s <= r_data; --r_data <= r_data_s; 
 t_data <= t_data_s;
 --assinments for I2S_in
 

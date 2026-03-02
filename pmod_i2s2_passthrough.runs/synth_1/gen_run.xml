@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1772472252" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/i2s_in_out.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1772474850" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/i2s_in_out.dcp">
   <File Type="PA-TCL" Name="TOP.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="TOP_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TOP_reports.tcl"/>
@@ -29,6 +29,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/i2s_in_out.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/FIR.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -37,13 +44,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Down_Up_sampling.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/i2s_in_out.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>

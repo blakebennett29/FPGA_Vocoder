@@ -37,7 +37,7 @@ entity I2S_in is
             r_sclk: out std_logic;
             r_mclk: out std_logic;
             r_lrclk: out std_logic;
-            r_data: out std_logic; --out for simulation
+            r_data: in std_logic; --out for simulation
             left_reg_output : out std_logic_vector(23 downto 0);
             right_reg_output : out std_logic_vector(23 downto 0);
             left_valid : out std_logic;
@@ -184,12 +184,12 @@ BM1 : blk_mem_gen_0 port map (
                 elsif shift_cnt >= 32 then 
                     ena_s <= '1';
                     shift_cnt <= 0;
-                    address <= address + 1;
-                    addra_s <= std_logic_vector(to_unsigned(address, 5));
-                    shift_Reg_load <= douta_s; --assine new sample to register
-                    if address >= 32 then  -- loop the block memory for output
-                        address <= 0;
-                    end if;
+--                    address <= address + 1;
+--                    addra_s <= std_logic_vector(to_unsigned(address, 5));
+--                    shift_Reg_load <= douta_s; --assine new sample to register
+--                    if address >= 32 then  -- loop the block memory for output
+--                        address <= 0;
+--                    end if;
                     -- added for shift reg 
                     if lrclk_s = '1' then
                         right_valid <= '0';
@@ -253,13 +253,13 @@ BM1 : blk_mem_gen_0 port map (
                 --shift data bit's out (in is how I am looking at it while programing the dac)
                 if sclk_fall_pulse = '1' then 
                     sclk_fall_pulse <= '0';
-                    r_data <= shift_Reg_load(31 - shift_cnt);--comment out for actual data
+                    --r_data <= shift_Reg_load(31 - shift_cnt);--comment out for actual data
                     shift_cnt <= shift_cnt +1;
                     --add data_in register to hold data
                     if lrclk_s = '0' then
-                        left_reg(31 - shift_cnt) <= shift_Reg_load(31 - shift_cnt); --r_data;
+                        left_reg(31 - shift_cnt) <= r_data; --shift_Reg_load(31 - shift_cnt); --
                     elsif lrclk_s = '1' then
-                        right_reg(31 - shift_cnt) <= shift_Reg_load(31 - shift_cnt); --r_data;
+                        right_reg(31 - shift_cnt) <= r_data; --shift_Reg_load(31 - shift_cnt); --
                     else
                         null;
                     end if;

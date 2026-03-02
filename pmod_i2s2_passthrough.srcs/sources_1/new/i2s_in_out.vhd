@@ -34,11 +34,12 @@ use IEEE.NUMERIC_STD.ALL;
 entity i2s_in_out is
   Port (    clk : in std_logic;
             reset : in std_logic;
-            
+            --data Reciver side 
             sclk : out std_logic;
             mclk : out std_logic;
             lrclk : out std_logic;
-            data: out std_logic;
+            data: in std_logic;
+            --transmitter side even with r_ port names
             r_sclk: out std_logic;
             r_mclk: out std_logic;
             r_lrclk: out std_logic;
@@ -47,38 +48,6 @@ entity i2s_in_out is
 end i2s_in_out;
 
 architecture Behavioral of i2s_in_out is
-
-component Down_Up_sampling is
-port (
-    reset : in std_logic;
-    --------------------------------------------------------------------------
-    -- Sample-time pulses (1 clk wide) derived from LRCLK edges
-    --------------------------------------------------------------------------
-    fs96_tick   : out std_logic;  -- once per stereo frame (96 kHz)
-    fs48_tick   : out std_logic;  -- once per 2 frames (48 kHz)
-    fs24_tick   : out std_logic;  -- once per 4 frames (24 kHz)
-    
-    --------------------------------------------------------------------------
-    -- Downsampled sample outputs (simple decimate-by-N of the captured 96k stream)
-    -- Format: 32-bit word per channel (your choice: left-justified 24-bit in [31:8])
-    --------------------------------------------------------------------------
-    ds48_left   : out std_logic_vector(31 downto 0);
-    ds48_right  : out std_logic_vector(31 downto 0);
-    ds48_valid  : out std_logic;
-
-    ds24_left   : out std_logic_vector(31 downto 0);
-    ds24_right  : out std_logic_vector(31 downto 0);
-    ds24_valid  : out std_logic;
-
-    --------------------------------------------------------------------------
-    -- Reserved ports for upsample back to 96 kHz (e.g., linear interpolation)
-    -- Provide a 96k stream into this block; when us96_valid='1', TX uses it.
-    --------------------------------------------------------------------------
-    us96_left   : in  std_logic_vector(31 downto 0);
-    us96_right  : in  std_logic_vector(31 downto 0);
-    us96_valid  : in  std_logic
- );
-end component;
 
 component blk_mem_gen_0 IS
   PORT (
@@ -111,8 +80,6 @@ signal shift_cnt_out : integer := 0;
 signal address : integer :=0;
 signal sclk_fall_pulse : std_logic := '0';
 signal lrclk_fall_pulse : std_logic := '0';
-signal lrclk_rise_pulse : std_logic := '0';
-
 -- additional registers for reciver side
 signal right_reg : std_logic_vector(31 downto 0) := (others =>'0');
 signal left_reg : std_logic_vector(31 downto 0) := (others =>'0');
@@ -123,42 +90,9 @@ signal right_reg_shift : std_logic_vector(31 downto 0) := (others =>'0');-- shif
 -- state machine for l and R channel output
 type LR_State is (Idle, Right, Left);
 signal state, next_state : LR_State;
--- ============================================================
--- Signals for Down_Up_sampling instance (all *_s)
--- ============================================================
---signal reset_s     : std_logic;
-
-signal fs96_tick_s : std_logic;
-signal fs48_tick_s : std_logic;
-signal fs24_tick_s : std_logic;
-
-signal ds48_left_s  : std_logic_vector(31 downto 0);
-signal ds48_right_s : std_logic_vector(31 downto 0);
-signal ds48_valid_s : std_logic;
-
-signal ds24_left_s  : std_logic_vector(31 downto 0);
-signal ds24_right_s : std_logic_vector(31 downto 0);
-signal ds24_valid_s : std_logic;
-
-signal us96_left_s  : std_logic_vector(31 downto 0)  := (others => '0');
-signal us96_right_s : std_logic_vector(31 downto 0)  := (others => '0');
-signal us96_valid_s : std_logic := '0';
--- ============================================================
--- Signals for lrclk rising and falling detection 
--- ============================================================
-signal sample_left_48khz_cnt : integer := 0;
-signal sample_right_48khz_cnt : integer := 0;
-signal sample_left_96khz_cnt : integer := 0;
-signal sample_right_96khz_cnt : integer := 0;
---down sampling signials
-signal left_sample_48khz : std_logic_vector(23 downto 0) := (others => '0');
-signal right_sample_48khz : std_logic_vector(23 downto 0):= (others => '0');
-signal left_sample_96khz : std_logic_vector(23 downto 0) := (others => '0');
-signal right_sample_96khz : std_logic_vector(23 downto 0) := (others => '0');
 
 begin
 --transmitter clks (all counting off of source clk 100mhz)
-    reset_s <= reset;
     mclk <= mclk_s;
     sclk <= sclk_s;
     lrclk <= lrclk_s;
@@ -175,32 +109,7 @@ BM : blk_mem_gen_0 port map (
     dina => dina_s,
     douta => douta_s
     );
- 
- 
--- ============================================================
--- Down_Up_sampling instance
--- ============================================================
-u_dus : Down_Up_sampling
-  port map (
-    reset       => reset_s,
-
-    fs96_tick   => fs96_tick_s,
-    fs48_tick   => fs48_tick_s,
-    fs24_tick   => fs24_tick_s,
-
-    ds48_left   => ds48_left_s,
-    ds48_right  => ds48_right_s,
-    ds48_valid  => ds48_valid_s,
-
-    ds24_left   => ds24_left_s,
-    ds24_right  => ds24_right_s,
-    ds24_valid  => ds24_valid_s,
-
-    us96_left   => us96_left_s,
-    us96_right  => us96_right_s,
-    us96_valid  => us96_valid_s
-  );
-  
+    
     
     process(clk)
         begin
@@ -243,13 +152,9 @@ u_dus : Down_Up_sampling
                 if lrcnt >= 511 then
                     lrcnt <= 0;
                     --not nessisary code------------
-                    if lrclk_s = '0' then   --lr edge detection "rising"
-                        lrclk_rise_pulse <= '1';
-                    end if;
-                    if lrclk_s = '1' then --"falling" edge detection
+                    if lrclk_s = '1' then   --lr edge detection "falling"
                         lrclk_fall_pulse <= '1';
                     end if;
-                    
                     --block above not nessassary -------------
                     lrclk_s <= not lrclk_s;
                 else
@@ -264,23 +169,23 @@ u_dus : Down_Up_sampling
                 elsif shift_cnt >= 32 then 
                     ena_s <= '1';
                     shift_cnt <= 0;
-                    address <= address + 1;
-                    addra_s <= std_logic_vector(to_unsigned(address, 5));
-                    shift_Reg_load <= douta_s; --assine new sample to register
-                    if address >= 32 then  -- loop the block memory for output
-                        address <= 0;
-                    end if;
+                    --address <= address + 1;
+                    --addra_s <= std_logic_vector(to_unsigned(address, 5));
+                    --shift_Reg_load <= douta_s; --assine new sample to register
+                    --if address >= 32 then  -- loop the block memory for output
+                    --    address <= 0;
+                
                     -- added for shift reg 
                     if lrclk_s = '1' then 
                         left_reg_output <= left_reg;
                         right_reg_shift <= right_reg_output;-- assinment to hold for an extra 32 sclk
-                    else if lrclk_s = '0' then
+                    elsif lrclk_s = '0' then
                         right_reg_output <= right_reg;
                         left_reg_shift <= left_reg_output; -- assinment to hold for an extra 32 sclk
                     end if; -- why does else if also need a end if statment?
-                    end if;
+                    --end if;
                     
-                    --new code-------------------------------------------------------------
+                    --ADC code-------------------------------------------------------------
                     
                 else
                     case state is
@@ -320,86 +225,31 @@ u_dus : Down_Up_sampling
                             end if;
                             
                             
-
                     end case;
+                    end if;
                     -- end of new code -----------------------------------------------------------------------------
+                    
                 --shift data bit's out (in is how I am looking at it while programing the dac)
                 if sclk_fall_pulse = '1' then 
                     sclk_fall_pulse <= '0';
-                    data <= shift_Reg_load(31 - shift_cnt);
-                    shift_cnt <= shift_cnt +1;
+                    --data <= shift_Reg_load(31 - shift_cnt);
+                    
                     --add data_in register to hold data
                     if lrclk_s = '0' then
-                        left_reg(31 - shift_cnt) <= shift_Reg_load(31 - shift_cnt);
-                    else if lrclk_s = '1' then
-                        right_reg(31 - shift_cnt) <= shift_Reg_load(31 - shift_cnt);
+                        left_reg(31 - shift_cnt) <= data; --shift_Reg_load(31 - shift_cnt);
+                        shift_cnt <= shift_cnt +1;
+                    elsif lrclk_s = '1' then
+                        right_reg(31 - shift_cnt) <= data; --shift_Reg_load(31 - shift_cnt);
+                        shift_cnt <= shift_cnt +1;
                     end if;
-                end if;
+                    --end if;
                     
-                --====================================================
-                -- Code for sampling every 48khz--24khz for testing-- or 1 lrclk of 96/97 khz
-                --=======================================================
-                -- left right clk_sampling data for 48khz
-                --left register
-                if lrclk_rise_pulse = '1' then --rising edge detection
-                    lrclk_rise_pulse <= '0';
-                    if sample_left_48khz_cnt = 3 then
-                        left_sample_48khz <= left_reg(31 downto 8);
-                        sample_left_48khz_cnt <= 0;
-                    else
-                        sample_left_48khz_cnt <= sample_left_48khz_cnt + 1;
-                    end if;
-                end if;
-                if lrclk_fall_pulse = '1' then
-                    lrclk_fall_pulse <= '0';
-                    --right register
-                    if sample_right_48khz_cnt = 3 then
-                        right_sample_48khz <= right_reg(31 downto 8);
-                        sample_right_48khz_cnt <= 0;
-                    else
-                        sample_right_48khz_cnt <= sample_right_48khz_cnt + 1;
-                    end if;
-                end if;
-                --=====
-                --end of 48khz clk code --24 for testing--
-                --=====
-                
-                
-                
-                 --====================================================
-                -- Code for sampling every 96khz or --48khz for testing pmod-- 1 lrclk of 96/97 khz
-                --=======================================================
-                -- left right clk_sampling data for 48khz
-                --left register
-                if lrclk_rise_pulse = '1' then --rising edge detection
-                    lrclk_rise_pulse <= '0';
-                    if sample_left_96khz_cnt = 1 then
-                        left_sample_96khz <= left_reg(31 downto 8);
-                        sample_left_96khz_cnt <= 0;
-                    else
-                        sample_left_96khz_cnt <= sample_left_96khz_cnt + 1;
-                    end if;
-                end if;
-                if lrclk_fall_pulse = '1' then
-                    lrclk_fall_pulse <= '0';
-                    --right register
-                    if sample_right_96khz_cnt = 1 then
-                        right_sample_96khz <= right_reg(31 downto 8);
-                        sample_right_96khz_cnt <= 0;
-                    else
-                        sample_right_96khz_cnt <= sample_right_96khz_cnt + 1;
-                    end if;
-                end if;
-                --=====
-                --end of 96khz clk code
-                --=====
-                
                     
                     
                 end if;
                 
             end if;
-            end if; -- idk where this was missed
+            --end if;-- idk where this was missed
     end process;
 
 end Behavioral;
