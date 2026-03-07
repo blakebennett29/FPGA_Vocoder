@@ -124,6 +124,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/TOP.dcp
   read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc
 OPTRACE "read constraints: implementation" END { }

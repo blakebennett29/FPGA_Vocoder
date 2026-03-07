@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1772578844" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/i2s_in_out.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1772591450" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/i2s_in_out.dcp">
   <File Type="PA-TCL" Name="TOP.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="TOP_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TOP_reports.tcl"/>
@@ -11,6 +11,12 @@
   <File Type="VDS-TIMING-PB" Name="TOP_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/FIR.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/I2S_in.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -25,13 +31,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/TOP.vhd">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FIR.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -59,6 +58,12 @@
     <File Path="$PSRCDIR/sources_1/new/Down_Sample.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/fir_compiler_0/fir_23_hp.coe">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -100,4 +105,5 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fir_compiler_0"/>
 </GenRun>

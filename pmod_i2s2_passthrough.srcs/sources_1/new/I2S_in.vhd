@@ -115,11 +115,11 @@ BM1 : blk_mem_gen_0 port map (
     r_lrclk <= lrclk_s;
     reset_s <= reset;
     --output registers left and right
-    left_reg_output <= left_reg_output_s(31 downto 8);
-    right_reg_output <= right_reg_output_s(31 downto 8);
+    left_reg_output <= left_reg_output_s(30 downto 7);
+    right_reg_output <= right_reg_output_s(30 downto 7);
     --assined for testing i2s out module with only i2s in at top module
-    left_reg_shift_c <= left_reg_output_s(31 downto 8);
-    right_reg_shift_c <= right_reg_output_s(31 downto 8);
+    left_reg_shift_c <= left_reg_output_s(30 downto 7);
+    right_reg_shift_c <= right_reg_output_s(30 downto 7);
     
     
     process(clk)
