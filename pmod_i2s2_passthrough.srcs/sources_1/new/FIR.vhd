@@ -106,10 +106,10 @@ fir_0: fir_compiler_0 port map (
                 
                 -- OUTPUT: use the OUTPUT tag (NOT s_axis tag)
                 if (m_axis_data_tvalid_s = '1') and (m_axis_data_tuser_s = "1") then
-                    out_data_left <= m_axis_data_tdata_s(31 downto 8);--data out
+                    out_data_left <= m_axis_data_tdata_s(29 downto 6);--data out
                 end if;
                 if(m_axis_data_tvalid_s = '1') and (m_axis_data_tuser_s = "0") then
-                    out_data_right <= m_axis_data_tdata_s(31 downto 8); --data out
+                    out_data_right <= m_axis_data_tdata_s(29 downto 6); --data out
                 end if;
                 -- end of input channel check
             end if;
