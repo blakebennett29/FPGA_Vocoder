@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Mar 30 16:50:03 2026
-# Process ID: 35220
+# Start of session at: Mon Mar 30 18:54:01 2026
+# Process ID: 53484
 # Current directory: E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1
 # Command line: vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
 # Log file: E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/TOP.vds
@@ -19,10 +19,10 @@
 # Host memory       :16363 MB
 # Swap memory       :22548 MB
 # Total Virtual     :38912 MB
-# Available Virtual :22145 MB
+# Available Virtual :20057 MB
 #-----------------------------------------------------------
 source TOP.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 531.086 ; gain = 200.582
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 530.492 ; gain = 200.875
 Command: read_checkpoint -auto_incremental -incremental E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -36,70 +36,80 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 38656
+INFO: [Synth 8-7075] Helper process launched with PID 45412
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1399.832 ; gain = 449.305
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1399.883 ; gain = 449.391
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'TOP' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:51]
-INFO: [Synth 8-3491] module 'I2S_out' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:33' bound to instance 'I2s_o' of component 'I2S_out' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'TOP' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:66]
+INFO: [Synth 8-3491] module 'Data_line_output' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:34' bound to instance 'U_Data_line_output' of component 'Data_line_output' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:133]
+INFO: [Synth 8-638] synthesizing module 'Data_line_output' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:51]
+INFO: [Synth 8-3491] module 'I2S_out' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:33' bound to instance 'I2s_o' of component 'I2S_out' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:224]
 INFO: [Synth 8-638] synthesizing module 'I2S_out' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:47]
 WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:88]
 INFO: [Synth 8-256] done synthesizing module 'I2S_out' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:47]
-INFO: [Synth 8-3491] module 'I2S_in' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:33' bound to instance 'I2s_i' of component 'I2S_in' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:237]
+INFO: [Synth 8-3491] module 'I2S_in' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:33' bound to instance 'I2s_i' of component 'I2S_in' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:238]
 INFO: [Synth 8-638] synthesizing module 'I2S_in' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:51]
-INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/blk_mem_gen_0_stub.vhdl:6' bound to instance 'BM1' of component 'blk_mem_gen_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:102]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/blk_mem_gen_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/blk_mem_gen_0_stub.vhdl:6' bound to instance 'BM1' of component 'blk_mem_gen_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/blk_mem_gen_0_stub.vhdl:18]
 WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:127]
 INFO: [Synth 8-256] done synthesizing module 'I2S_in' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:51]
-INFO: [Synth 8-3491] module 'AA_filter_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:28' bound to instance 'AA_2' of component 'AA_filter_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:252]
+INFO: [Synth 8-3491] module 'AA_filter_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:28' bound to instance 'AA_2' of component 'AA_filter_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:253]
 INFO: [Synth 8-638] synthesizing module 'AA_filter_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:43]
 WARNING: [Synth 8-5640] Port 'm_axis_data_tlast' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:73]
 WARNING: [Synth 8-5640] Port 'event_s_data_tlast_missing' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:73]
 WARNING: [Synth 8-5640] Port 'event_s_data_tlast_unexpected' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:73]
 WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:73]
-INFO: [Synth 8-3491] module 'fir_compiler_0' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/fir_compiler_0_stub.vhdl:6' bound to instance 'fir_0' of component 'fir_compiler_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:89]
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/fir_compiler_0_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'fir_compiler_0' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/fir_compiler_0_stub.vhdl:6' bound to instance 'fir_0' of component 'fir_compiler_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/fir_compiler_0_stub.vhdl:25]
 INFO: [Synth 8-226] default block is never used [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:168]
 WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:107]
 INFO: [Synth 8-256] done synthesizing module 'AA_filter_2' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:43]
-INFO: [Synth 8-3491] module 'Level_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:34' bound to instance 'L1' of component 'Level_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:264]
+INFO: [Synth 8-3491] module 'Level_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:34' bound to instance 'L1' of component 'Level_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:265]
 INFO: [Synth 8-638] synthesizing module 'Level_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:54]
 INFO: [Synth 8-3491] module 'L_L1_FIR' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:34' bound to instance 'U_L_L1_FIR' of component 'L_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:116]
 INFO: [Synth 8-638] synthesizing module 'L_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:49]
 WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:68]
-INFO: [Synth 8-3491] module 'L_L1_fir_compiler_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/L_L1_fir_compiler_1_stub.vhdl:6' bound to instance 'fir_Low' of component 'L_L1_fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:81]
-INFO: [Synth 8-638] synthesizing module 'L_L1_fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/L_L1_fir_compiler_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'L_L1_fir_compiler_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/L_L1_fir_compiler_1_stub.vhdl:6' bound to instance 'fir_Low' of component 'L_L1_fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'L_L1_fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/L_L1_fir_compiler_1_stub.vhdl:21]
 INFO: [Synth 8-256] done synthesizing module 'L_L1_FIR' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:49]
 INFO: [Synth 8-3491] module 'H_L1_FIR' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:34' bound to instance 'U_H_L1_FIR' of component 'H_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:131]
 INFO: [Synth 8-638] synthesizing module 'H_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:50]
 WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:72]
-INFO: [Synth 8-3491] module 'H_L1_fir_compiler_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/H_L1_fir_compiler_2_stub.vhdl:6' bound to instance 'fir_Low' of component 'H_L1_fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'H_L1_fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/H_L1_fir_compiler_2_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'H_L1_fir_compiler_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/H_L1_fir_compiler_2_stub.vhdl:6' bound to instance 'fir_Low' of component 'H_L1_fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'H_L1_fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/H_L1_fir_compiler_2_stub.vhdl:21]
 INFO: [Synth 8-256] done synthesizing module 'H_L1_FIR' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:50]
 INFO: [Synth 8-256] done synthesizing module 'Level_1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:54]
-INFO: [Synth 8-3491] module 'INTERPOLATE_AA' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:34' bound to instance 'U_INTERPOLATE_AA' of component 'INTERPOLATE_AA' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:281]
+INFO: [Synth 8-3491] module 'INTERPOLATE_AA' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:34' bound to instance 'U_INTERPOLATE_AA' of component 'INTERPOLATE_AA' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:282]
 INFO: [Synth 8-638] synthesizing module 'INTERPOLATE_AA' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:52]
 WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:73]
-INFO: [Synth 8-3491] module 'fir_compiler_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/fir_compiler_1_stub.vhdl:6' bound to instance 'AA_fir_up_sample_1' of component 'fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:87]
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/fir_compiler_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'fir_compiler_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/fir_compiler_1_stub.vhdl:6' bound to instance 'AA_fir_up_sample_1' of component 'fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/fir_compiler_1_stub.vhdl:21]
 INFO: [Synth 8-256] done synthesizing module 'INTERPOLATE_AA' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:52]
-INFO: [Synth 8-3491] module 'INTERPOLATE_L1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:34' bound to instance 'U_INTERPOLATE_L1' of component 'INTERPOLATE_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:297]
+INFO: [Synth 8-3491] module 'INTERPOLATE_L1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:34' bound to instance 'U_INTERPOLATE_L1' of component 'INTERPOLATE_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:298]
 INFO: [Synth 8-638] synthesizing module 'INTERPOLATE_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:55]
 INFO: [Synth 8-3491] module 'H_INTP_L1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:34' bound to instance 'U_H_INTP_L1' of component 'H_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:137]
 INFO: [Synth 8-638] synthesizing module 'H_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:52]
 WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:77]
-INFO: [Synth 8-3491] module 'fir_compiler_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/fir_compiler_2_stub.vhdl:6' bound to instance 'H_L1_fir_up_sample' of component 'fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:92]
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/fir_compiler_2_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'fir_compiler_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/fir_compiler_2_stub.vhdl:6' bound to instance 'H_L1_fir_up_sample' of component 'fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:92]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/fir_compiler_2_stub.vhdl:21]
 INFO: [Synth 8-256] done synthesizing module 'H_INTP_L1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:52]
 INFO: [Synth 8-3491] module 'L_INTP_L1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:34' bound to instance 'U_L_INTP_L1' of component 'L_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:154]
 INFO: [Synth 8-638] synthesizing module 'L_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:52]
 WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:73]
-INFO: [Synth 8-3491] module 'INT_L_L1_fir_compiler' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/INT_L_L1_fir_compiler_stub.vhdl:6' bound to instance 'INT_L_L1' of component 'INT_L_L1_fir_compiler' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'INT_L_L1_fir_compiler' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-35220-Blakes-PC/realtime/INT_L_L1_fir_compiler_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'INT_L_L1_fir_compiler' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/INT_L_L1_fir_compiler_stub.vhdl:6' bound to instance 'INT_L_L1' of component 'INT_L_L1_fir_compiler' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'INT_L_L1_fir_compiler' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-53484-Blakes-PC/realtime/INT_L_L1_fir_compiler_stub.vhdl:21]
 INFO: [Synth 8-256] done synthesizing module 'L_INTP_L1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:52]
 WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:169]
 INFO: [Synth 8-256] done synthesizing module 'INTERPOLATE_L1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:55]
-INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'Data_line_output' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:51]
+INFO: [Synth 8-3491] module 'Half_Data_line_Env_fol' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:34' bound to instance 'U_Half_Data_line_Env_fol' of component 'Half_Data_line_Env_fol' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'Half_Data_line_Env_fol' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:51]
+INFO: [Synth 8-3491] module 'I2S_out' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:33' bound to instance 'I2s_o' of component 'I2S_out' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:184]
+INFO: [Synth 8-3491] module 'I2S_in' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:33' bound to instance 'I2s_i' of component 'I2S_in' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:198]
+INFO: [Synth 8-3491] module 'AA_filter_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:28' bound to instance 'AA_2' of component 'AA_filter_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:213]
+INFO: [Synth 8-3491] module 'Level_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:34' bound to instance 'L1' of component 'Level_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:225]
+INFO: [Synth 8-256] done synthesizing module 'Half_Data_line_Env_fol' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:66]
 WARNING: [Synth 8-6014] Unused sequential element lrcnt_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:93]
 WARNING: [Synth 8-6014] Unused sequential element lrclk_rise_pulse_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:130]
 WARNING: [Synth 8-6014] Unused sequential element lrclk_fall_pulse_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:133]
@@ -109,6 +119,11 @@ WARNING: [Synth 8-6014] Unused sequential element lrclk_fall_pulse_reg was remov
 WARNING: [Synth 8-6014] Unused sequential element shift_Reg_load_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:137]
 WARNING: [Synth 8-6014] Unused sequential element right_valid_cnt_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:116]
 WARNING: [Synth 8-6014] Unused sequential element right_valid_cnt_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:142]
+WARNING: [Synth 8-7129] Port left_valid_in in module H_L1_FIR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port right_valid_in in module H_L1_FIR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port left_valid_in in module L_L1_FIR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port right_valid_in in module L_L1_FIR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port t_mclk in module I2S_out is either unconnected or has no load
 WARNING: [Synth 8-7129] Port reset in module L_INTP_L1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port left_valid_in in module L_INTP_L1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port right_valid_in in module L_INTP_L1 is either unconnected or has no load
@@ -118,79 +133,87 @@ WARNING: [Synth 8-7129] Port right_valid_in in module H_INTP_L1 is either unconn
 WARNING: [Synth 8-7129] Port reset in module INTERPOLATE_AA is either unconnected or has no load
 WARNING: [Synth 8-7129] Port left_valid_in in module INTERPOLATE_AA is either unconnected or has no load
 WARNING: [Synth 8-7129] Port right_valid_in in module INTERPOLATE_AA is either unconnected or has no load
-WARNING: [Synth 8-7129] Port left_valid_in in module H_L1_FIR is either unconnected or has no load
-WARNING: [Synth 8-7129] Port right_valid_in in module H_L1_FIR is either unconnected or has no load
-WARNING: [Synth 8-7129] Port left_valid_in in module L_L1_FIR is either unconnected or has no load
-WARNING: [Synth 8-7129] Port right_valid_in in module L_L1_FIR is either unconnected or has no load
-WARNING: [Synth 8-7129] Port t_mclk in module I2S_out is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1519.293 ; gain = 568.766
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1522.758 ; gain = 572.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1519.293 ; gain = 568.766
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1522.758 ; gain = 572.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1519.293 ; gain = 568.766
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1522.758 ; gain = 572.266
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1519.293 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1522.758 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'L1/U_L_L1_FIR/fir_Low'
-Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'L1/U_L_L1_FIR/fir_Low'
-Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'L1/U_H_L1_FIR/fir_Low'
-Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'L1/U_H_L1_FIR/fir_Low'
-Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_INTERPOLATE_AA/AA_fir_up_sample_1'
-Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_INTERPOLATE_AA/AA_fir_up_sample_1'
-Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
-Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
-Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
-Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
-Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'I2s_i/BM1'
-Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'I2s_i/BM1'
-Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'AA_2/fir_0'
-Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'AA_2/fir_0'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/L1/U_L_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/L1/U_L_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/L1/U_H_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/L1/U_H_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'U_Data_line_output/I2s_i/BM1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'U_Data_line_output/I2s_i/BM1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/I2s_i/BM1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/I2s_i/BM1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Data_line_output/AA_2/fir_0'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Data_line_output/AA_2/fir_0'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_2/fir_0'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_2/fir_0'
 Parsing XDC File [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]
 Finished Parsing XDC File [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TOP_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1614.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1624.578 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1614.336 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1624.578 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for L1/U_L_L1_FIR/fir_Low. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for L1/U_H_L1_FIR/fir_Low. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_INTERPOLATE_AA/AA_fir_up_sample_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for I2s_i/BM1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for AA_2/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/L1/U_L_L1_FIR/fir_Low. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/L1/U_H_L1_FIR/fir_Low. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/I2s_i/BM1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/I2s_i/BM1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/AA_2/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/AA_2/fir_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'I2S_out'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'AA_filter_2__xdcDup__1'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'AA_filter_2'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -208,9 +231,18 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
               load_right |                               10 |                               10
               hold_valid |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'AA_filter_2__xdcDup__1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+               load_left |                               01 |                               01
+              load_right |                               10 |                               10
+              hold_valid |                               11 |                               11
+---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'AA_filter_2'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -218,24 +250,24 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   34 Bit       Adders := 2     
-	   2 Input   32 Bit       Adders := 3     
+	   2 Input   32 Bit       Adders := 6     
 +---Registers : 
 	               34 Bit    Registers := 2     
-	               32 Bit    Registers := 24    
-	               24 Bit    Registers := 4     
-	                5 Bit    Registers := 1     
+	               32 Bit    Registers := 39    
+	               24 Bit    Registers := 6     
+	                5 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 22    
+	                1 Bit    Registers := 38    
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 13    
-	   4 Input   24 Bit        Muxes := 2     
-	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 3     
-	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 29    
-	   3 Input    1 Bit        Muxes := 5     
-	   4 Input    1 Bit        Muxes := 7     
+	   2 Input   32 Bit        Muxes := 23    
+	   4 Input   24 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 6     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 55    
+	   3 Input    1 Bit        Muxes := 10    
+	   4 Input    1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -252,26 +284,32 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (U_Half_Data_line_Env_fol/I2s_o/FSM_onehot_state_reg[2]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (U_Half_Data_line_Env_fol/I2s_o/FSM_onehot_state_reg[1]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (U_Half_Data_line_Env_fol/I2s_o/FSM_onehot_state_reg[0]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (U_Half_Data_line_Env_fol/I2s_o/FSM_onehot_next_state_reg[2]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (U_Half_Data_line_Env_fol/I2s_o/FSM_onehot_next_state_reg[1]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (U_Half_Data_line_Env_fol/I2s_o/FSM_onehot_next_state_reg[0]) is unused and will be removed from module TOP.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -289,37 +327,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -329,10 +367,10 @@ Report BlackBoxes:
 +------+----------------------+----------+
 |      |BlackBox name         |Instances |
 +------+----------------------+----------+
-|1     |fir_compiler_0        |         1|
-|2     |blk_mem_gen_0         |         1|
-|3     |H_L1_fir_compiler_2   |         1|
-|4     |L_L1_fir_compiler_1   |         1|
+|1     |fir_compiler_0        |         2|
+|2     |blk_mem_gen_0         |         2|
+|3     |H_L1_fir_compiler_2   |         2|
+|4     |L_L1_fir_compiler_1   |         2|
 |5     |fir_compiler_1        |         1|
 |6     |fir_compiler_2        |         1|
 |7     |INT_L_L1_fir_compiler |         1|
@@ -343,50 +381,53 @@ Report Cell Usage:
 |      |Cell                       |Count |
 +------+---------------------------+------+
 |1     |H_L1_fir_compiler_2_bbox   |     1|
-|2     |INT_L_L1_fir_compiler_bbox |     1|
-|3     |L_L1_fir_compiler_1_bbox   |     1|
-|4     |blk_mem_gen_0_bbox         |     1|
-|5     |fir_compiler_0_bbox        |     1|
-|6     |fir_compiler_1_bbox        |     1|
-|7     |fir_compiler_2_bbox        |     1|
-|8     |BUFG                       |     1|
-|9     |CARRY4                     |   121|
-|10    |LUT1                       |    32|
-|11    |LUT2                       |   534|
-|12    |LUT3                       |   206|
-|13    |LUT4                       |    10|
-|14    |LUT5                       |    80|
-|15    |LUT6                       |    24|
-|16    |MUXF7                      |     6|
-|17    |FDCE                       |   323|
-|18    |FDPE                       |     2|
-|19    |FDRE                       |   789|
-|20    |FDSE                       |     6|
-|21    |IBUF                       |     3|
-|22    |OBUF                       |     7|
+|2     |H_L1_fir_compiler_2_bbox_3 |     1|
+|3     |INT_L_L1_fir_compiler_bbox |     1|
+|4     |L_L1_fir_compiler_1_bbox   |     1|
+|5     |L_L1_fir_compiler_1_bbox_2 |     1|
+|6     |blk_mem_gen_0_bbox         |     1|
+|7     |blk_mem_gen_0_bbox_0       |     1|
+|8     |fir_compiler_0_bbox        |     1|
+|9     |fir_compiler_0_bbox_1      |     1|
+|10    |fir_compiler_1_bbox        |     1|
+|11    |fir_compiler_2_bbox        |     1|
+|12    |BUFG                       |     1|
+|13    |CARRY4                     |   189|
+|14    |LUT1                       |    65|
+|15    |LUT2                       |   796|
+|16    |LUT3                       |   314|
+|17    |LUT4                       |    18|
+|18    |LUT5                       |    52|
+|19    |LUT6                       |   128|
+|20    |FDCE                       |   541|
+|21    |FDPE                       |     2|
+|22    |FDRE                       |  1017|
+|23    |FDSE                       |    12|
+|24    |IBUF                       |     4|
+|25    |OBUF                       |    10|
 +------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 1614.336 ; gain = 568.766
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1614.336 ; gain = 663.809
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 1624.578 ; gain = 572.266
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1624.578 ; gain = 674.086
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1614.336 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 127 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1624.578 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 189 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1614.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1624.578 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 28231615
+Synth Design complete | Checksum: 14ab7f83
 INFO: [Common 17-83] Releasing license: Synthesis
-73 Infos, 37 Warnings, 0 Critical Warnings and 0 Errors encountered.
+85 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1614.336 ; gain = 1066.910
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1614.336 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1624.578 ; gain = 1077.730
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1624.578 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/TOP.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 30 16:50:46 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 30 18:54:45 2026...

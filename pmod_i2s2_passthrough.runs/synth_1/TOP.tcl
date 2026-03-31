@@ -86,6 +86,10 @@ add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.sr
 add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/INT_L_L1_fir_compiler/low.coe
 add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/blk_mem_gen_0/sine02.coe
 read_vhdl -library xil_defaultlib {
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd
+}
+read_vhdl -vhdl2008 -library xil_defaultlib {
   E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd
   E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd
   E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd
