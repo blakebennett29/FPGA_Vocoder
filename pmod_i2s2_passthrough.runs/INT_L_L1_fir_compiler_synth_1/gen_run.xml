@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="INT_L_L1_fir_compiler_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1774909641">
+<GenRun Id="INT_L_L1_fir_compiler_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1775510872">
   <File Type="PA-TCL" Name="INT_L_L1_fir_compiler.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="INT_L_L1_fir_compiler_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="INT_L_L1_fir_compiler_reports.tcl"/>
   <File Type="RDS-RDS" Name="INT_L_L1_fir_compiler.vds"/>
   <File Type="RDS-UTIL" Name="INT_L_L1_fir_compiler_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="INT_L_L1_fir_compiler_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="INT_L_L1_fir_compiler.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="INT_L_L1_fir_compiler_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="INT_L_L1_fir_compiler_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/INT_L_L1_fir_compiler" RelGenDir="$PGENDIR/INT_L_L1_fir_compiler">
     <File Path="$PSRCDIR/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler.xci">
       <FileInfo>

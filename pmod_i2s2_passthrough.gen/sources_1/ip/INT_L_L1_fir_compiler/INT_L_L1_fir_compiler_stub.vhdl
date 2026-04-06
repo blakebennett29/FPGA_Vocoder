@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
--- Date        : Sat Apr  4 21:59:45 2026
--- Host        : Nut-Laptop running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {c:/Users/natha/OneDrive/Documents/Senior Project/FPGA
---               Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_stub.vhdl}
+-- Date        : Mon Mar 30 16:28:20 2026
+-- Host        : Blakes-PC running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub -rename_top INT_L_L1_fir_compiler -prefix
+--               INT_L_L1_fir_compiler_ INT_L_L1_fir_compiler_stub.vhdl
 -- Design      : INT_L_L1_fir_compiler
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

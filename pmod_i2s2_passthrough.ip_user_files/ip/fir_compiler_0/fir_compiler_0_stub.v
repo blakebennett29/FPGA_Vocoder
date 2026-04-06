@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Sat Apr  4 19:39:40 2026
+// Date        : Sat Apr  4 19:39:39 2026
 // Host        : Blakes-PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top fir_compiler_0 -prefix
+//               fir_compiler_0_ fir_compiler_0_stub.v
 // Design      : fir_compiler_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1

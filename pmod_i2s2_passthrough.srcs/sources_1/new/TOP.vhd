@@ -190,25 +190,25 @@ adc1_r_mclk <= adc_mclk_s(0);
 adc1_r_lrclk <= adc_lrclk_s(0);
 adc_r_data_s(0) <= adc1_r_data;
 
-adc2_r_sclk <= adc_sclk_s(1);
-adc2_r_mclk <= adc_mclk_s(1);
-adc2_r_lrclk <= adc_lrclk_s(1);
+adc2_r_sclk <= adc_sclk_s(0);
+adc2_r_mclk <= adc_mclk_s(0);
+adc2_r_lrclk <= adc_lrclk_s(0);
 adc_r_data_s(1) <= adc2_r_data;
 
-dac1_t_sclk <= adc_sclk_s(0);
-dac1_t_mclk <= adc_mclk_s(0);
-dac1_t_lrclk <= adc_lrclk_s(0);
-dac1_t_data <= out_data_s;
+--dac1_t_sclk <= adc_sclk_s(0);
+--dac1_t_mclk <= adc_mclk_s(0);
+--dac1_t_lrclk <= adc_lrclk_s(0);
+--dac1_t_data <= out_data_s;
 
-dac2_t_sclk <= adc_sclk_s(1);
-dac2_t_mclk <= adc_mclk_s(1);
-dac2_t_lrclk <= adc_lrclk_s(1);
+dac2_t_sclk <= adc_sclk_s(0);
+dac2_t_mclk <= adc_mclk_s(0);
+dac2_t_lrclk <= adc_lrclk_s(0);
 dac2_t_data <= out_data_s;
 
-dac3_t_sclk <= adc_sclk_s(0);
-dac3_t_mclk <= adc_mclk_s(0);
-dac3_t_lrclk <= adc_lrclk_s(0);
-dac3_t_data <= out_data_s;
+--dac3_t_sclk <= adc_sclk_s(0);
+--dac3_t_mclk <= adc_mclk_s(0);
+--dac3_t_lrclk <= adc_lrclk_s(0);
+--dac3_t_data <= out_data_s;
 
 --out_valid_s <= out_valid;
 
@@ -266,9 +266,9 @@ U_Half_Data_line_Env_fol : Half_Data_line_Env_fol
         Env_fol_out => Env_fol_out_s,
         out_valid => in_valid_s,
         
-        r_sclk   => adc_sclk_s(1),
-        r_mclk   => adc_mclk_s(1),
-        r_lrclk  => adc_lrclk_s(1),
+        r_sclk   => adc_sclk_s(0),
+        r_mclk   => adc_mclk_s(0),
+        r_lrclk  => adc_lrclk_s(0),
         r_data   => adc_r_data_s(1)
 
 --            t_sclk   => sclk_s,
