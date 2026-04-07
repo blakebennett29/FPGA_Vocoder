@@ -129,7 +129,7 @@ begin
                 case current_state is
                     when IDLE =>
                         Mod_valid_out_s     <= '0';
-                        if in_valid_s = '1' then
+                        if in_valid_s = '1' then -- m_tvalid_in = '1' then--
                             current_state <= MODULATE;
                         else
                             current_state <= IDLE;
@@ -137,11 +137,11 @@ begin
                     when MODULATE =>
                         -- Multiply input by envelope
                         --high L1 modulation
-                        left_mult_L1_H_s  <= resize(left_in_L1_H_s * to_sfixed((signed("00" & Env_fol_in_s) sll 1), -1, -19), 31, 0); --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
-                        right_mult_L1_H_s <= resize(right_in_L1_H_s * to_sfixed((signed("00" & Env_fol_in_s) sll 1), -1, -19), 31, 0);
+                        left_mult_L1_H_s  <= resize(left_in_L1_H_s * to_sfixed((signed("00" & Test_gain) sll 1), 0, -18), 31, 0); --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
+                        right_mult_L1_H_s <= resize(right_in_L1_H_s * to_sfixed((signed("00" & Test_gain) sll 1), 0, -18), 31, 0);
                         --Low L1 modulation
-                        left_mult_L1_L_s  <= resize(left_in_L1_L_s  * to_sfixed((signed("00" & Env_fol_in_s) sll 1), -1, -19), 31 , 0); --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
-                        right_mult_L1_L_s   <= resize(right_in_L1_L_s * to_sfixed((signed("00" & Env_fol_in_s) sll 1), -1, -19), 31 , 0); --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
+                        left_mult_L1_L_s  <= resize(left_in_L1_L_s  * to_sfixed((signed("00" & Test_gain) sll 1), 0, -18), 31 , 0); --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
+                        right_mult_L1_L_s   <= resize(right_in_L1_L_s * to_sfixed((signed("00" & Test_gain) sll 1), 0, -18), 31 , 0); --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
                         
                         current_state <= OUTPUT_STATE;
                     when OUTPUT_STATE =>

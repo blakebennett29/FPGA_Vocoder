@@ -92,6 +92,7 @@ signal right_reg_output_s : std_logic_vector(31 downto 0) := (others =>'0');--ho
 signal left_reg_output_s : std_logic_vector(31 downto 0) := (others =>'0');--hold for sample period
 signal left_reg_shift_c : std_logic_vector(23 downto 0) := (others =>'0');--shift to output dac
 signal right_reg_shift_c : std_logic_vector(23 downto 0) := (others =>'0');-- shift to ouput dac
+signal wait_first_bit : std_logic := '0';
 -- state machine for l and R channel output
 type LR_State is (Idle, Right, Left);
 signal state, next_state : LR_State;
@@ -120,11 +121,11 @@ BM1 : blk_mem_gen_0 port map (
     r_lrclk <= lrclk_s;
     reset_s <= reset;
     --output registers left and right
-    left_reg_output <= left_reg_output_s(31 downto 8); --(30 downto 7);
-    right_reg_output <= right_reg_output_s(31 downto 8); --(30 downto 7);
+    left_reg_output <= left_reg_output_s(30 downto 7); --(30 downto 7);
+    right_reg_output <= right_reg_output_s(30 downto 7); --(30 downto 7);
     --assined for testing i2s out module with only i2s in at top module
-    left_reg_shift_c <= left_reg_output_s(31 downto 8); --(30 downto 7);
-    right_reg_shift_c <= right_reg_output_s(31 downto 8); --(30 downto 7);
+    left_reg_shift_c <= left_reg_output_s(30 downto 7); --(30 downto 7);
+    right_reg_shift_c <= right_reg_output_s(30 downto 7); --(30 downto 7);
     
     right_valid <= right_valid_s;
     left_valid <= left_valid_s;
@@ -200,10 +201,27 @@ BM1 : blk_mem_gen_0 port map (
                     
                     --block above not nessassary -------------
                     lrclk_s <= not lrclk_s;
+                    wait_first_bit <= '1';   -- skip first SCLK after LRCLK edge
+                    
                 else
                     lrcnt <= lrcnt + 1;
                 end if;
+--                if lrcnt >= 255 then
+--                    lrcnt <= 0;
                 
+--                    if lrclk_s = '0' then
+--                        lrclk_rise_pulse <= '1';
+--                        left_valid_s <= '1';
+--                    else
+--                        lrclk_fall_pulse <= '1';
+--                        right_valid_s <= '1';
+--                    end if;
+                
+--                    lrclk_s <= not lrclk_s;
+                
+--                    shift_cnt <= 0;
+--                    wait_first_bit <= '1';   -- skip first SCLK after LRCLK edge
+--                end if;
                 ----------------------------------------------------------------
                 -- re-sync after reset:
                 -- wait for first clean LRCLK edge before shifting data
@@ -321,19 +339,22 @@ BM1 : blk_mem_gen_0 port map (
 --                    end case;
                     -- end of new code -----------------------------------------------------------------------------
                 --shift data bit's out (in is how I am looking at it while programing the dac)
-                if (sclk_fall_pulse = '1') and (shift_cnt < 32) then 
+                  if sclk_fall_pulse = '1' then
                     sclk_fall_pulse <= '0';
-                    --r_data_s <= shift_Reg_load(31 - shift_cnt);--comment out for actual data
-                    shift_cnt <= shift_cnt +1;
-                    --add data_in register to hold data
-                    if lrclk_s = '0' then
-                        left_reg(31 - shift_cnt) <=  r_data_s; -- shift_Reg_load(31 - shift_cnt);   -- 
-                    elsif lrclk_s = '1' then
-                        right_reg(31 - shift_cnt) <=  r_data_s; -- shift_Reg_load(31 - shift_cnt);  --
-                    else
-                        null;
+                
+--                    if wait_first_bit = '1' then
+--                        wait_first_bit <= '0';   -- skip dummy bit
+                        --shift_cnt <= 1;
+                    if shift_cnt < 32 then
+                        if lrclk_s = '0' then
+                            left_reg(31 - shift_cnt) <= r_data_s;
+                        else
+                            right_reg(31 - shift_cnt) <= r_data_s;
+                        end if;
+                
+                        shift_cnt <= shift_cnt + 1;
                     end if;
-                end if;                                 
+                end if;                               
                 --end if;
                 
             end if;

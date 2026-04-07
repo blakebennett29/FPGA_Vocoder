@@ -266,9 +266,9 @@ U_Half_Data_line_Env_fol : Half_Data_line_Env_fol
         Env_fol_out => Env_fol_out_s,
         out_valid => in_valid_s,
         
-        r_sclk   => adc_sclk_s(0),
-        r_mclk   => adc_mclk_s(0),
-        r_lrclk  => adc_lrclk_s(0),
+--        r_sclk   => adc_sclk_s(0),
+--        r_mclk   => adc_mclk_s(0),
+--        r_lrclk  => adc_lrclk_s(0),
         r_data   => adc_r_data_s(1)
 
 --            t_sclk   => sclk_s,

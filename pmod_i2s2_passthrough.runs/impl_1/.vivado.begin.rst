@@ -1,40 +1,20 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="natha" Host="NUT-LAPTOP" Pid="240636" HostCore="32" HostMemory="068393058304">
+    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="106520" HostCore="16" HostMemory="016363622400">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="natha" Host="NUT-LAPTOP" Pid="255396" HostCore="32" HostMemory="068393058304">
+    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="92812" HostCore="16" HostMemory="016363622400">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="natha" Host="NUT-LAPTOP" Pid="56540" HostCore="32" HostMemory="068393058304">
+    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="89392" HostCore="16" HostMemory="016363622400">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="91072" HostCore="16" HostMemory="016363622400">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="60024" HostCore="16" HostMemory="016363622400">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="33164" HostCore="16" HostMemory="016363622400">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="36856" HostCore="16" HostMemory="016363622400">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="38272" HostCore="16" HostMemory="016363622400">
+    <Process Command="vivado.bat" Owner="20bbe" Host="BLAKES-PC" Pid="112060" HostCore="16" HostMemory="016363622400">
     </Process>
 </ProcessHandle>

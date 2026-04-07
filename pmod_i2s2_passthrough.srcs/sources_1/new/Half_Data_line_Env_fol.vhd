@@ -226,6 +226,7 @@ t_data <= t_data_s;
 Env_fol_out <= Env_fol_out_s;
 
 out_valid <= out_valid_s;
+locked_s <= locked;
 --assinments for I2S_in
 
 ----assinments for I2S_out

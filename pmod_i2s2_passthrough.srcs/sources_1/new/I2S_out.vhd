@@ -37,9 +37,9 @@ entity I2S_out is
             left_reg_shift : in std_logic_vector(23 downto 0);
             
             
---            t_sclk: out std_logic;
---            t_mclk: out std_logic;
---            t_lrclk: out std_logic;
+            t_sclk: in std_logic;
+            t_mclk: in std_logic;
+            t_lrclk: in std_logic;
             t_data: out std_logic
             );
 end I2S_out;
@@ -76,25 +76,30 @@ signal state, next_state : LR_State;
 
 signal right_reg_shift_t : std_logic_vector(31 downto 0) := (others =>'0');
 signal left_reg_shift_t : std_logic_vector(31 downto 0) := (others =>'0');
+signal t_data_s : std_logic := '0';
+
 begin
 
 --transmitter clks (all counting off of source clk 100mhz)
     reset_s <= reset;
---    t_mclk <= clk;
---    t_sclk <= sclk_ss;
---    t_lrclk <= lrclk_ss;
+    mclk_ss <= t_mclk;
+    sclk_ss <= t_sclk;
+    lrclk_ss <= t_lrclk;
+    t_data <= t_data_s;
+
     right_reg_shift_s <= right_reg_shift(23 downto 0) & (7 downto 0 => '0');
     left_reg_shift_s <= left_reg_shift(23 downto 0) & (7 downto 0 => '0');
     process(clk)
         begin
-           if reset = '1' then
+           if reset_s = '1' then
                 mcnt <= 0;
                 scnt <= 0;
                 lrcnt <= 0;
+                right_reg_shift_t <= (others => '0');
+                left_reg_shift_t <= (others => '0');
 --                mclk_ss  <= '0';
 --                sclk_ss  <= '0';
 --                lrclk_ss <= '0';
-                reset_s <= '0';
                 shift_Reg_load <= (others => '0');
                 shift_cnt <= 0;
                 state <= Idle;
@@ -109,21 +114,21 @@ begin
 --                else
 --                    mcnt <= mcnt + 1;
 --                end if;
-                --------------------------------------------------------------------
+                ------------------------------------------------------------------
                 --sclk generation
---                if scnt >= 7 then
---                    scnt <= 0;
+                if scnt >= 3 then
+                    scnt <= 0;
                      -- detect the *falling* edge (about to go low 1 -> 0)
                     if sclk_ss = '1' then
                         sclk_fall_pulse <= '1';
                     end if;
-                    sclk_ss <= not sclk_ss;
---                else
---                    scnt <= scnt + 1;
---                end if;
-                --------------------------------------------------------------------
+                    --sclk_s <= not sclk_s;
+                else
+                    scnt <= scnt + 1;
+                end if;
+                ------------------------------------------------------------------
                 --lrclk generation
-                if lrcnt >= 63 then
+                if lrcnt >= 255 then
                     lrcnt <= 0;
                     --not nessisary code------------
                     if lrclk_ss = '0' then   --lr edge detection "rising"
@@ -156,11 +161,10 @@ begin
                     if lrclk_ss = '1' then 
                         --left_reg_output <= left_reg;
                         right_reg_shift_t <= right_reg_shift_s;-- assinment to hold for an extra 32 sclk
-                    else if lrclk_ss = '0' then
+                    elsif lrclk_ss = '0' then
                         --right_reg_output <= right_reg;
                         left_reg_shift_t <= left_reg_shift_s; -- assinment to hold for an extra 32 sclk
                     end if; -- why does else if also need a end if statment?
-                end if;
                     
                     --new code-------------------------------------------------------------
                     
@@ -168,35 +172,32 @@ begin
                     case state is
                         when Idle =>
                             if lrclk_ss = '0' then
-                                next_state <= Right;
-                            elsif lrclk_ss = '1' then
-                                next_state <= left;
-                            else
-                                next_state <= Idle;
-                            end if;
-                            
-                        when Right =>
-                            if lrclk_ss = '0' then
-                                if sclk_fall_pulse = '1' then 
-                                    sclk_fall_pulse <= '0';
-                                    t_data <= right_reg_shift_t(31 - shift_cnt);
-                                    shift_cnt <= shift_cnt +1;
-                                end if;
-                            end if;
-                            if lrclk_ss = '1' then
                                 next_state <= Left;
                             else
                                 next_state <= Right;
                             end if;
+                        
                         when Left =>
-                            if lrclk_ss = '1' then
-                                if sclk_fall_pulse = '1' then 
-                                    sclk_fall_pulse <= '0';
-                                    t_data <= left_reg_shift_t(31 - shift_cnt);
-                                    shift_cnt <= shift_cnt +1;
-                                end if;
-                            end if;
+                            -- shift LEFT data while lrclk = 0
                             if lrclk_ss = '0' then
+                                if sclk_fall_pulse = '1' then
+                                    sclk_fall_pulse <= '0';
+                                    t_data_s <= left_reg_shift_t(31 - shift_cnt);
+                                    shift_cnt <= shift_cnt + 1;
+                                end if;
+                                next_state <= Left;
+                            else
+                                next_state <= Right;
+                            end if;
+                        
+                        when Right =>
+                            -- shift RIGHT data while lrclk = 1
+                            if lrclk_ss = '1' then
+                                if sclk_fall_pulse = '1' then
+                                    sclk_fall_pulse <= '0';
+                                    t_data_s <= right_reg_shift_t(31 - shift_cnt);
+                                    shift_cnt <= shift_cnt + 1;
+                                end if;
                                 next_state <= Right;
                             else
                                 next_state <= Left;

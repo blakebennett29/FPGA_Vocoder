@@ -60,10 +60,10 @@ architecture sim of tb_TOP is
     --------------------------------------------------------------------------
     -- stimulus samples
     --------------------------------------------------------------------------
-    constant ADC1_LEFT_ONCE  : std_logic_vector(23 downto 0) := x"000800";
+    constant ADC1_LEFT_ONCE  : std_logic_vector(23 downto 0) := x"aaaaaa";
     constant ADC1_RIGHT_ONCE : std_logic_vector(23 downto 0) := x"000000";
 
-    constant ADC2_LEFT_ONCE  : std_logic_vector(23 downto 0) := x"000000";
+    constant ADC2_LEFT_ONCE  : std_logic_vector(23 downto 0) := x"aaaaaa";
     constant ADC2_RIGHT_ONCE : std_logic_vector(23 downto 0) := x"000000";
 
     constant ZERO24 : std_logic_vector(23 downto 0) := (others => '0');

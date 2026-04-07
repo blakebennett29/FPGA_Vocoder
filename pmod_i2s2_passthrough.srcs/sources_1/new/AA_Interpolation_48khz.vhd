@@ -149,10 +149,10 @@ process(clk)
                 
                 -- OUTPUT: use the OUTPUT tag (NOT s_axis tag)
                 if (m_axis_data_tvalid_s = '1') and (m_axis_data_tuser_s = "1") then
-                    out_data_l_s <= m_axis_data_tdata_s(24 downto 1);--data out
+                    out_data_l_s <= m_axis_data_tdata_s(23 downto 0);--data out
                 end if;
                 if(m_axis_data_tvalid_s = '1') and (m_axis_data_tuser_s = "0") then
-                    out_data_R_s <= m_axis_data_tdata_s(24 downto 1); --data out
+                    out_data_R_s <= m_axis_data_tdata_s(23 downto 0); --data out 24 downto 1
                 end if;
                 -- end of input channel check
             end if;
