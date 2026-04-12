@@ -3,5 +3,8 @@
 
 # XDC: new/Constraints.xdc
 
+# IP: ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==L_L1_fir_compiler_1 || ORIG_REF_NAME==L_L1_fir_compiler_1} -quiet] -quiet
+
 # IP: ip/AA_1_fir/AA_1_fir.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AA_1_fir || ORIG_REF_NAME==AA_1_fir} -quiet] -quiet

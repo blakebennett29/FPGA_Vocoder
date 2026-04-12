@@ -1,7 +1,0 @@
-xpm_cdc.sv,systemverilog,xpm,../../../../../../3610_digital_systems/Vivado/2024.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
-xpm_VCOMP.vhd,vhdl,xpm,../../../../../../3610_digital_systems/Vivado/2024.1/data/ip/xpm/xpm_VCOMP.vhd,
-xbip_utils_v3_0_vh_rfs.vhd,vhdl,xbip_utils_v3_0_13,../../../ipstatic/hdl/xbip_utils_v3_0_vh_rfs.vhd,
-axi_utils_v2_0_vh_rfs.vhd,vhdl,axi_utils_v2_0_9,../../../ipstatic/hdl/axi_utils_v2_0_vh_rfs.vhd,
-fir_compiler_v7_2_vh_rfs.vhd,vhdl,fir_compiler_v7_2_22,../../../ipstatic/hdl/fir_compiler_v7_2_vh_rfs.vhd,
-L_L1_fir_compiler_1.vhd,vhdl,xil_defaultlib,../../../../pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/sim/L_L1_fir_compiler_1.vhd,
-glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -38,6 +38,10 @@ entity I2S_in is
             r_sclk: out std_logic;
             r_mclk: out std_logic;
             r_lrclk: out std_logic;
+            lrclk_rise_pulse_t : out std_logic;
+            lrclk_fall_pulse_t : out std_logic;
+            sclk_fall_pulse_t : out std_logic;
+            
             --r_data: out std_logic;
             r_data: in std_logic; --out for simulation
             
@@ -131,6 +135,9 @@ begin
     left_valid <= left_valid_s;
     r_data_s <= r_data;
     
+    lrclk_fall_pulse_t <= lrclk_fall_pulse;
+    lrclk_rise_pulse_t <= lrclk_rise_pulse;
+    sclk_fall_pulse_t <= sclk_fall_pulse;
     locked_s <= locked;
     process(comp_clk, reset_s)
         begin

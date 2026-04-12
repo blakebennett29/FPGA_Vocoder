@@ -125,11 +125,16 @@ signal out_valid_L_R_s : std_logic := '0';
 signal out_valid_H_R_s : std_logic := '0';
 signal locked_s : std_logic :='0';
 
+signal lrclk_rise_pulse_s : std_logic := '0';
+signal lrclk_fall_pulse_s : std_logic := '0';
 component I2S_in is
   Port (    --clk : in std_logic;
             comp_clk : in std_logic;
             reset : in std_logic;
             locked : in std_logic;
+            
+            lrclk_rise_pulse_t : out std_logic;
+            lrclk_fall_pulse_t : out std_logic;
             
             r_sclk: out std_logic;
             r_mclk: out std_logic;

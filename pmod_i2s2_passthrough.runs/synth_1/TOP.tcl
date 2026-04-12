@@ -57,11 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/20bbe/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-87440-Blakes-PC/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -90,6 +86,10 @@ add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.sr
 add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/aa_filter_127tap_48kcutoff_fs196k_q23.coe
 add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/L_L1_fir_compiler_1/low_2x_new.coe
 add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/H_L1_fir_compiler_2/high_2x_new.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/LP_split_fs48k_fc12k_g2_q1_23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/HP_split_fs48k_fc12k_neg1n_g2_q1_23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/HP_split_fs48k_fc12k_neg1n_g1_q1_23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/LP_split_fs48k_fc12k_g1_q1_23.coe
 read_vhdl -library xil_defaultlib E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd
 read_vhdl -vhdl2008 -library xil_defaultlib {
   E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd
@@ -110,13 +110,13 @@ read_vhdl -vhdl2008 -library xil_defaultlib {
   E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd
   E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd
 }
-read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/AA_1_fir/AA_1_fir.xci
-set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/constraints/fir_compiler_v7_2.xdc]
-set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir_ooc.xdc]
-
 read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1.xci
 set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/constraints/fir_compiler_v7_2.xdc]
 set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1_ooc.xdc]
+
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/AA_1_fir/AA_1_fir.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir_ooc.xdc]
 
 read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2.xci
 set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/constraints/fir_compiler_v7_2.xdc]

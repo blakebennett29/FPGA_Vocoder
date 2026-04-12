@@ -41,7 +41,10 @@ entity AA_Interpolation_48khz is
                 left_valid_in    : in  std_logic; --remove
                 right_valid_in   : in  std_logic; --remove
                 m_tdata_valid_in : in std_logic;
-        
+                
+                
+                M_tdata_valid_out_R : out std_logic;
+                M_tdata_valid_out_L : out std_logic;
                 -- output samples
                 data_out_left    : out std_logic_vector(23 downto 0);
                 data_out_right   : out std_logic_vector(23 downto 0)
@@ -150,9 +153,16 @@ process(clk)
                 -- OUTPUT: use the OUTPUT tag (NOT s_axis tag)
                 if (m_axis_data_tvalid_s = '1') and (m_axis_data_tuser_s = "1") then
                     out_data_l_s <= m_axis_data_tdata_s(23 downto 0);--data out
+                    M_tdata_valid_out_L <= '1';
+                else
+                    M_tdata_valid_out_L <= '0';
                 end if;
                 if(m_axis_data_tvalid_s = '1') and (m_axis_data_tuser_s = "0") then
-                    out_data_R_s <= m_axis_data_tdata_s(23 downto 0); --data out 24 downto 1
+                    out_data_R_s <= m_axis_data_tdata_s(31 downto 8); --data out 24 downto 1
+                    M_tdata_valid_out_R <= '1';
+                else
+                    M_tdata_valid_out_R <= '0';
+                    
                 end if;
                 -- end of input channel check
             end if;

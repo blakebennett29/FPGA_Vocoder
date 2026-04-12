@@ -1,0 +1,2 @@
+INT_L_L1_fir_compiler.vhd,vhdl,xil_defaultlib,../../../../pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/sim/INT_L_L1_fir_compiler.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v

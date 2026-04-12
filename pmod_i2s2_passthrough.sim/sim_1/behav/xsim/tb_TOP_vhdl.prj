@@ -1,0 +1,27 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/sim/H_L1_fir_compiler_2.vhd" \
+"../../../../pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/sim/L_L1_fir_compiler_1.vhd" \
+"../../../../pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/sim/fir_compiler_0.vhd" \
+"../../../../pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/sim/AA_1_fir.vhd" \
+"../../../../pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/sim/fir_compiler_3.vhd" \
+"../../../../pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd" \
+
+vhdl2008 xil_defaultlib  \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd" \
+"../../../../pmod_i2s2_passthrough.srcs/sim_1/new/tb_TOP.vhd" \
+
+# Do not sort compile order
+nosort

@@ -150,12 +150,12 @@ begin
                     when MODULATE =>
                         -- Multiply input by envelope
                         --high L1 modulation
-                        left_mult_L1_H_s  <= resize(left_in_L1_H_s  * to_sfixed(Env_fol_in_H_L_1_s), 31, -17);   --Env_fol_in_H_L_1_s    --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
-                        right_mult_L1_H_s <= resize(right_in_L1_H_s * to_sfixed(Env_fol_in_H_R_1_s), 31, -17);-- * to_sfixed((signed("00" & Env_fol_in_H_L_1_s) sll 1), 0, -18), 31, 0);  --Env_fol_in_H_L_1_s
+                        left_mult_L1_H_s  <= resize(left_in_L1_H_s  * Test_gain,31,-17);--to_sfixed(Env_fol_in_H_L_1_s), 31, -17);   --Env_fol_in_H_L_1_s    --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
+                        right_mult_L1_H_s <= resize(right_in_L1_H_s * Test_gain,31,-17);--to_sfixed(Env_fol_in_H_R_1_s), 31, -17);-- * to_sfixed((signed("00" & Env_fol_in_H_L_1_s) sll 1), 0, -18), 31, 0);  --Env_fol_in_H_L_1_s
                         
                         --Low L1 modulation
-                        left_mult_L1_L_s  <= resize(left_in_L1_L_s  * to_sfixed(Env_fol_in_L_L_1_s), 31, -17);    --left_mult_L1_L_s  <= resize(left_in_L1_L_s  * to_sfixed((signed("00" & Env_fol_in_L_L_1_s) sll 1), 0, -18), 31 , 0); --Env_fol_in_L_L_1_s    --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
-                        right_mult_L1_L_s   <= resize(right_in_L1_L_s * to_sfixed(Env_fol_in_L_R_1_s), 31, -17);    -- * to_sfixed((signed("00" & Env_fol_in_L_L_1_s) sll 1), 0, -18), 31 , 0); --Env_fol_in_L_L_1_s  --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
+                        left_mult_L1_L_s  <= resize(left_in_L1_L_s  * Test_gain,31,-17);--to_sfixed(Env_fol_in_L_L_1_s), 31, -17);    --left_mult_L1_L_s  <= resize(left_in_L1_L_s  * to_sfixed((signed("00" & Env_fol_in_L_L_1_s) sll 1), 0, -18), 31 , 0); --Env_fol_in_L_L_1_s    --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
+                        right_mult_L1_L_s   <= resize(right_in_L1_L_s * Test_gain,31,-17);--to_sfixed(Env_fol_in_L_R_1_s), 31, -17);    -- * to_sfixed((signed("00" & Env_fol_in_L_L_1_s) sll 1), 0, -18), 31 , 0); --Env_fol_in_L_L_1_s  --to_sfixed(signed('0' & Env_fol_in_s), -1, -18), 31, 0);
                         
                         current_state <= OUTPUT_STATE;
                     when OUTPUT_STATE =>

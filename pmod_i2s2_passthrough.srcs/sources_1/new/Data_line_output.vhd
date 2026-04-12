@@ -134,7 +134,12 @@ signal Mod_valid_out_s : std_logic := '0';
 signal locked_s : std_logic := '0';
 signal Env_fol_in_L_R_s : std_logic_vector(16 downto 0);
 signal Env_fol_in_H_R_s : std_logic_vector(16 downto 0);
+signal M_tdata_valid_out_R_s : std_logic := '0';
+signal M_tdata_valid_out_L_s : std_logic := '0';
 
+signal lrclk_rise_pulse_s : std_logic := '0';
+signal lrclk_fall_pulse_s : std_logic := '0';
+signal sclk_fall_pulse_s : std_logic := '0';
 
 signal DC_offset_test : std_logic_vector(16 downto 0) := "01111111111111111";
 
@@ -158,6 +163,9 @@ component I2S_in is
             r_lrclk: out std_logic;
             r_data: in std_logic;
             --r_data: out std_logic;--out for simulation
+            lrclk_rise_pulse_t : out std_logic;
+            lrclk_fall_pulse_t : out std_logic;
+            sclk_fall_pulse_t : out std_logic;
             
             left_valid : out std_logic;
             right_valid : out std_logic;
@@ -297,7 +305,9 @@ component AA_Interpolation_48khz is
                 left_valid_in    : in  std_logic; --remove
                 right_valid_in   : in  std_logic; --remove
                 m_tdata_valid_in : in std_logic;
-        
+                
+                M_tdata_valid_out_R : out std_logic;
+                M_tdata_valid_out_L : out std_logic;
                 -- output samples
                 data_out_left    : out std_logic_vector(23 downto 0);
                 data_out_right   : out std_logic_vector(23 downto 0)
@@ -309,8 +319,13 @@ component I2S_out is
             reset : in std_logic;
             locked : in std_logic;
             
+            M_tdata_valid_in_R : in std_logic;
+            M_tdata_valid_in_L : in std_logic;
             right_reg_shift : in std_logic_vector(23 downto 0);
             left_reg_shift : in std_logic_vector(23 downto 0);
+            lrclk_rise_pulse_t : in std_logic;
+            lrclk_fall_pulse_t : in std_logic;
+            sclk_fall_pulse_t : in std_logic;
             
             t_sclk: in std_logic;
             t_mclk: in std_logic;
@@ -363,6 +378,9 @@ I2s_i : I2S_in port map (
     left_valid => left_valid_s,
     right_valid => right_valid_s,
     
+    lrclk_rise_pulse_t => lrclk_rise_pulse_s,
+    lrclk_fall_pulse_t => lrclk_fall_pulse_s,
+    sclk_fall_pulse_t => sclk_fall_pulse_s,
     left_reg_output => left_reg_shift_c, --maps to FIR core inputs
     right_reg_output => right_reg_shift_c
 );
@@ -491,13 +509,14 @@ port map (
     clk            => comp_clk,
     reset          => reset,
 
-    data_in_left   => interpolate_aa_data_out_left_s, --data from AA filter
-    data_in_right  => interpolate_aa_data_out_right_s, --data from AA filter
+    data_in_left   => interpolate_aa_data_out_left_s, --fir_out_data_left_s,  --data from AA filter
+    data_in_right  => interpolate_aa_data_out_right_s, --fir_out_data_right_s, --data from AA filter
     left_valid_in  => left_valid_s,
     right_valid_in => right_valid_s,
     
     m_tdata_valid_in => m_tdata_valid_out_int_aa_2_s,
-    
+    M_tdata_valid_out_R => M_tdata_valid_out_R_s,
+    M_tdata_valid_out_L => M_tdata_valid_out_L_s,
     
     data_out_left  => interpolate_aa_2_data_out_left_s,
     data_out_right => interpolate_aa_2_data_out_right_s
@@ -510,10 +529,16 @@ I2s_o : I2S_out port map (
     reset => reset,
     locked => locked_s,
     
+    M_tdata_valid_in_R => M_tdata_valid_out_R_s,
+    M_tdata_valid_in_L => M_tdata_valid_out_L_s,
     right_reg_shift => interpolate_aa_2_data_out_right_s, --fir_out_data_right_2_s(27 downto 4), --for right out data  --right_reg_shift_c,
     --passthrough_signal --left_reg_shift_c,
     --AA_filter_signal  --fir_out_data_left_s,
     left_reg_shift => interpolate_aa_2_data_out_left_s, -- env_out_s(16 downto 0) & "0000000",----interpolate_aa_2_data_out_left_s, ----interpolate_aa_data_out_left_s, --fir_out_data_left_s(44 downto 21), --L_L1_test_left_s,-- , --fir_out_data_left_s,   --for left out data  -- right_reg_shift_c,-- --
+    
+    lrclk_rise_pulse_t => lrclk_rise_pulse_s,
+    lrclk_fall_pulse_t => lrclk_fall_pulse_s,
+    sclk_fall_pulse_t => sclk_fall_pulse_s,
     
     t_sclk => sclk_s,
     t_mclk => mclk_s,
