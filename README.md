@@ -38,7 +38,8 @@ This creates a foundation for features such as:
 * Future DSP experimentation in hardware
 
 ---
-
+# Hardware Box
+![Full_product](docs/Board_in_Box.jpg)
 ## Hardware Platform
 
 This design is built around:
