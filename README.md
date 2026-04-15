@@ -2,24 +2,32 @@
 
 ## Overview
 
-This project implements a real-time digital audio processing chain on an FPGA using an **I2S audio interface**, **multirate FIR filtering**, and a **multiband signal path**. The system receives stereo digital audio from an external codec through the **Digilent Pmod I2S2**, processes the samples on the FPGA, and transmits the processed audio back out over I2S.
+This project implements a real-time digital audio processing chain on an FPGA using an **I2S audio interface**, **multirate FIR filtering**, and 2 **multiband signal paths**. The system receives stereo digital audio from the **ADC** on our board; those samples get processed on the FPGA and are transmitted back out over I2S.
 
-The current design targets a Xilinx Artix-7 based development flow and was developed in **Vivado** using a mix of custom VHDL and Xilinx FIR Compiler IP.
+The current design targets a Xilinx Artix-7 based development flow and was developed in **Vivado** using a mix of custom **VHDL** and Xilinx FIR Compiler IP cores.
 
 At a high level, the project demonstrates:
 
 * Real-time **I2S input and output** handling
 * **Oversampled audio processing**
-* **Anti-aliasing filtering** before rate changes
-* **Band splitting with FIR filters**
+* **Anti-aliasing filtering** with 48 kHz and 24 kHz cutoff stages before rate changes
+* **QMF (Quadrature Mirror Filter)** band splitting with FIR filters
 * A practical FPGA-oriented filter-bank architecture
 * Resource/performance tradeoffs for scaling to more bands
 
 ---
+System Block Diagram
+
+![System block diagram](docs/block_diagram.png)
+
+
+Figure: Current multirate multiband signal path, showing I2S input, anti-alias filtering, decimation, QMF splits, modulation/envelope stages, interpolation, reconstruction filtering, and I2S output.
 
 ## System Goal
 
-The goal of this project is to build a flexible FPGA audio platform that can split incoming audio into frequency bands, process those bands independently, and then reconstruct the signal for playback.
+The goal of this project is to build a flexible FPGA-based audio platform that splits incoming audio into frequency bands, processes those bands independently, and then reconstructs the signal for playback.
+
+This playback signal path (1) will be modulated by another input signal (2). Signal input (2) will be a modulator for signal input (1). Meaning the gain and frequency pass-through will be determined by input (2), where the audio will be modulated and passed through from input (1).
 
 This creates a foundation for features such as:
 
@@ -36,7 +44,8 @@ This creates a foundation for features such as:
 This design is built around:
 
 * **Basys 3 / Artix-7 FPGA platform**
-* **Digilent Pmod I2S2** audio interface
+* Digilent Pmod I2S2 audio interface for initial testing
+* Up-clocking using PLLs to get from 24.576 MHz to 98.8 MHz
 * External audio codec path for stereo input/output
 * FPGA clocking for audio-domain timing and internal compute timing
 
@@ -47,6 +56,7 @@ The audio interface uses **I2S**, where stereo audio samples are transferred usi
 * **SDIN / SDOUT** for serial audio data
 
 The project uses **24-bit audio samples carried in 32-bit slots**, which is a common and practical format for I2S audio transport.
+We used left-justified testing with the PMOD, but the Philips protocol was used with the integration with the board because of the ADC and DAC protocols.
 
 ---
 
@@ -63,7 +73,7 @@ The receiver:
 * Reconstructs each audio word into parallel sample data
 * Separates left and right channels for internal processing
 
-Because I2S is serial, one of the most important parts of the design is correct **bit alignment** and **word timing**. The design follows the standard I2S convention where the data is delayed by one bit clock relative to the LRCLK transition.
+Because I2S is serial, one of the most important parts of the design is correct **bit alignment** and **word timing**. The design follows the standard I2S convention, where the data is delayed by one bit clock relative to the LRCLK transition. This is consistent with the Philips protocol.
 
 ## 2. Internal Processing Path
 
@@ -71,15 +81,16 @@ Once samples are captured, they are routed through a multirate DSP chain made fr
 
 The present layout is based on:
 
-1. **Anti-alias filtering**
+1. **2 anti-alias filters**
 2. **Downsampling / decimation**
 3. **Band splitting**
 4. Optional per-band processing
 5. **Interpolation / upsampling**
-6. Final anti-imaging filtering
+6. Final anti-imaging filtering (reconstruction with AA filters)
 7. I2S transmit back to the codec
 
 This structure is efficient because lower-frequency bands can be processed at lower sample rates, reducing the number of operations required per second.
+This would be a big part of Rev. 2 of this project, having it take the full computation time to allocate samples rather than running everything in parallel and not taking advantage of the extra time.
 
 ## 3. I2S Transmit
 
@@ -108,44 +119,52 @@ This is one of the most important ideas in the project because it makes a hardwa
 
 ---
 
-## Aliasing Condition and Why It Is Not a Problem
+## Aliasing Condition, Why It Is Being Relaxed, and Why It Is Acceptable
 
 Aliasing occurs when signal content above the new Nyquist limit folds back into lower frequencies during downsampling.
 
-For example, if the sample rate is reduced by 2, the new Nyquist frequency is also cut in half. Any energy above that new limit must be removed before decimation, or it will fold into the passband and corrupt the result.
+For example, if the sample rate is reduced by 2, the new Nyquist frequency is also cut in half. Any energy above that new limit should ideally be removed before decimation, or it will fold into the passband and corrupt the result.
 
-That is why the design includes **anti-alias filters before decimation**.
+In an ideal multirate system, the aliasing condition is satisfied strictly before every decimation stage. In this project, the base split does **not fully satisfy that condition in the strict textbook sense**. There is still some spectral overlap around the crossover region when the signal is decimated.
 
-### Why aliasing is controlled here
+So the most accurate way to describe the design is:
 
-Aliasing is not a problem in this architecture **when the anti-alias filter is doing its job**:
+> the architecture allows some aliasing risk at the base filter layer, but the practical impact is limited by aggressive cutoff placement, strong overlap behavior, and the way the bands are reconstructed.
 
-* The signal is lowpass filtered before decimation
-* Frequencies that would fold back are attenuated first
-* The remaining signal content fits within the bandwidth allowed by the lower sample rate
+### Why this is acceptable in practice
 
-So the design does not ignore the aliasing condition. Instead, it is built specifically to satisfy it.
+Even though the alias condition is not being enforced perfectly at that stage, it is still acceptable for this design because:
 
-### Important practical note
+* the crossover filters are intentionally aggressive
+* the overlap region is narrow and controlled
+* most of the energy that could fold is already strongly attenuated
+* the remaining folded components are small enough to be tolerable in the intended application
 
-Aliasing can still appear if:
+So this is not a claim that aliasing is mathematically absent. It is a design tradeoff:
 
-* The cutoff frequency is too high
-* The transition band is too narrow for the chosen tap count
-* The stopband attenuation is not sufficient
-* A decimator is inserted without proper filtering ahead of it
+* strict alias-free splitting would require more filtering cost
+* the present design accepts a controlled amount of alias interaction
+* the audible and practical penalty is small enough to justify the hardware savings
 
-So the statement is not that aliasing is impossible. The correct statement is:
+That distinction is important. The system is not perfectly alias-free at that split. Instead, it is **engineered so that the amount of aliasing introduced is limited enough that it does not become a major problem**.
 
-> aliasing is prevented by design, as long as the anti-alias filters are correctly specified and placed before each rate reduction.
+### Why the aggressive overlap helps
+
+Because the crossover region is shaped aggressively, the band edges do not hand off abruptly. Instead, the filters overlap in a way that reduces the strength of unwanted edge artifacts. This means that even if the strict alias criterion is relaxed, the energy near the folding region is already reduced enough that the reconstructed result remains usable.
+
+This is really a practical FPGA DSP compromise:
+
+* not fully ideal in theory
+* acceptable in implementation
+* much cheaper than forcing a perfectly clean split everywhere
 
 ---
 
 ## Oversampling and Why It Helps
 
-Oversampling is also part of why this system behaves well.
+Oversampling is the main way to mitigate this issue more cleanly.
 
-In this context, oversampling helps in several ways:
+Rather than forcing extremely sharp filters at the first split stage, a better approach is to **oversample or keep a higher sample rate at the base filter layer**. Doing that creates more frequency space between the audio band of interest and the folding boundary.
 
 ### 1. More room for filter transition bands
 
@@ -163,7 +182,17 @@ A well-planned oversampled chain can move demanding filtering stages into places
 
 If the system is operating with margin above the final audio bandwidth of interest, the split bands can be designed with less overlap error and less risk of unwanted folding artifacts.
 
-In short, oversampling does not eliminate the need for proper filters, but it makes good filter design more achievable.
+### Practical interpretation
+
+The current design uses aggressive filtering and overlap to keep the aliasing penalty small enough to tolerate. A stronger next step would be to oversample at the base filter layer so that the same split can be achieved with more spectral margin and less folding risk.
+
+That gives a useful progression:
+
+1. Current system: acceptable practical tradeoff, but not strictly alias-free at the base split
+2. Improved system: oversample the base filter layer to reduce the aliasing burden
+3. Future system: combine oversampling with more efficient filter reuse or selective band splitting
+
+In other words, **oversampling is the cleaner mitigation path**, especially at the earliest split where the alias condition is hardest to satisfy with limited hardware.
 
 ---
 
@@ -185,7 +214,7 @@ Because each additional full-range split typically requires:
 On an FPGA, this quickly increases usage of:
 
 * DSP slices
-  n- LUTs
+* LUTs
 * Registers
 * BRAM
 * Routing resources
@@ -434,7 +463,7 @@ This approach gives a meaningful step toward a richer multiband processor withou
 
 This project shows how a real-time FPGA audio system can combine I2S interfacing, oversampling, multirate FIR processing, and multiband signal decomposition in a practical hardware design.
 
-The aliasing condition is addressed directly through anti-alias filtering before each rate reduction, so aliasing is not a problem when the filters are designed correctly. Oversampling provides additional design margin that makes filtering and reconstruction more practical. While a direct 4-band expansion of the current layout is too expensive in resources, there are realistic ways to scale the design, especially by splitting only the low bands further and by reusing processing hardware through multiplexing.
+The current system does not strictly satisfy the alias-free condition at the base split, but the design uses aggressive cutoff placement, controlled overlap, and practical reconstruction behavior to keep the penalty small enough to tolerate. Oversampling provides additional design margin that makes filtering and reconstruction more practical, and it is the clearest next step for reducing this alias burden. While a direct 4-band expansion of the current layout is too expensive in resources, there are realistic ways to scale the design, especially by splitting only the low bands further and by reusing processing hardware through multiplexing.
 
 That makes the project a strong foundation for future FPGA-based audio DSP work.
 
