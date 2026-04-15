@@ -1,2 +1,0 @@
-H_L1_fir_compiler_2.vhd,vhdl,xil_defaultlib,../../../../pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/sim/H_L1_fir_compiler_2.vhd,
-glbl.v,Verilog,xil_defaultlib,glbl.v

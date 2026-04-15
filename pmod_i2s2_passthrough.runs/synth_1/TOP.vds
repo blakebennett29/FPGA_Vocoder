@@ -3,36 +3,33 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Apr 12 00:50:11 2026
-# Process ID: 138868
-# Current directory: C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1
+# Start of session at: Tue Apr 14 23:21:12 2026
+# Process ID: 54760
+# Current directory: E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1
 # Command line: vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
-# Log file: C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/TOP.vds
-# Journal file: C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1\vivado.jou
-# Running On        :Nut-Laptop
+# Log file: E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/TOP.vds
+# Journal file: E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1\vivado.jou
+# Running On        :Blakes-PC
 # Platform          :Windows Server 2016 or Windows 10
-# Operating System  :26200
-# Processor Detail  :13th Gen Intel(R) Core(TM) i9-13900HX
-# CPU Frequency     :2419 MHz
-# CPU Physical cores:24
-# CPU Logical cores :32
-# Host memory       :68393 MB
-# Swap memory       :4294 MB
-# Total Virtual     :72688 MB
-# Available Virtual :35882 MB
+# Operating System  :22621
+# Processor Detail  :AMD Ryzen 9 6900HS with Radeon Graphics        
+# CPU Frequency     :3294 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :16363 MB
+# Swap memory       :29088 MB
+# Total Virtual     :45452 MB
+# Available Virtual :17828 MB
 #-----------------------------------------------------------
 source TOP.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 556.500 ; gain = 202.043
-Command: read_checkpoint -auto_incremental -incremental {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp}
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 531.309 ; gain = 201.266
+Command: read_checkpoint -auto_incremental -incremental E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top TOP -part xc7a35tcpg236-1
 Starting synth_design
-WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
-C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1.xci
-
-INFO: [IP_Flow 19-2162] IP 'L_L1_fir_compiler_1' is locked:
-* IP file 'c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1.xml' for IP 'L_L1_fir_compiler_1' contains stale content.
+INFO: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
+* This IP has board specific outputs. Current project board 'digilentinc.com:basys3:part0:1.2' and the board 'unset' used to customize the IP 'clk_wiz_0' do not match.
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
@@ -41,117 +38,119 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 139600
+INFO: [Synth 8-7075] Helper process launched with PID 42752
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1424.355 ; gain = 448.977
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1400.605 ; gain = 447.266
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'TOP' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:65]
-INFO: [Synth 8-113] binding component instance 'clk_ibufg_inst' to cell 'IBUFG' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:231]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/clk_wiz_0_stub.vhdl:6' bound to instance 'COMPUTATION_CLOCK' of component 'clk_wiz_0' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:241]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/clk_wiz_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'Data_line_output' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:35' bound to instance 'U_Data_line_output' of component 'Data_line_output' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:249]
-INFO: [Synth 8-638] synthesizing module 'Data_line_output' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:61]
-INFO: [Synth 8-3491] module 'I2S_in' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:33' bound to instance 'I2s_i' of component 'I2S_in' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:367]
-INFO: [Synth 8-638] synthesizing module 'I2S_in' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:56]
-WARNING: [Synth 8-614] signal 'locked_s' is read in the process but is not in the sensitivity list [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:142]
-INFO: [Synth 8-256] done synthesizing module 'I2S_in' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:56]
-INFO: [Synth 8-3491] module 'AA_filter_1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:34' bound to instance 'AA_1' of component 'AA_filter_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:394]
-INFO: [Synth 8-638] synthesizing module 'AA_filter_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:48]
-INFO: [Synth 8-3491] module 'AA_1_fir' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/AA_1_fir_stub.vhdl:6' bound to instance 'AA_1' of component 'AA_1_fir' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:92]
-INFO: [Synth 8-638] synthesizing module 'AA_1_fir' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/AA_1_fir_stub.vhdl:21]
-INFO: [Synth 8-226] default block is never used [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:136]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:109]
-INFO: [Synth 8-256] done synthesizing module 'AA_filter_1' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:48]
-INFO: [Synth 8-3491] module 'AA_filter_2' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:28' bound to instance 'AA_2' of component 'AA_filter_2' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:408]
-INFO: [Synth 8-638] synthesizing module 'AA_filter_2' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:44]
-WARNING: [Synth 8-5640] Port 'm_axis_data_tlast' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
-WARNING: [Synth 8-5640] Port 'event_s_data_tlast_missing' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
-WARNING: [Synth 8-5640] Port 'event_s_data_tlast_unexpected' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
-WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
-INFO: [Synth 8-3491] module 'fir_compiler_0' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_0_stub.vhdl:6' bound to instance 'fir_0' of component 'fir_compiler_0' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:107]
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_0_stub.vhdl:25]
-INFO: [Synth 8-256] done synthesizing module 'AA_filter_2' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:44]
-INFO: [Synth 8-3491] module 'Level_1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:34' bound to instance 'L1' of component 'Level_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:421]
-INFO: [Synth 8-638] synthesizing module 'Level_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:54]
-INFO: [Synth 8-3491] module 'L_L1_FIR' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:34' bound to instance 'U_L_L1_FIR' of component 'L_L1_FIR' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:116]
-INFO: [Synth 8-638] synthesizing module 'L_L1_FIR' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:49]
-WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:68]
-INFO: [Synth 8-3491] module 'L_L1_fir_compiler_1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/L_L1_fir_compiler_1_stub.vhdl:6' bound to instance 'fir_Low' of component 'L_L1_fir_compiler_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:81]
-INFO: [Synth 8-638] synthesizing module 'L_L1_fir_compiler_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/L_L1_fir_compiler_1_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'L_L1_FIR' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:49]
-INFO: [Synth 8-3491] module 'H_L1_FIR' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:34' bound to instance 'U_H_L1_FIR' of component 'H_L1_FIR' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:131]
-INFO: [Synth 8-638] synthesizing module 'H_L1_FIR' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:50]
-WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:72]
-INFO: [Synth 8-3491] module 'H_L1_fir_compiler_2' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/H_L1_fir_compiler_2_stub.vhdl:6' bound to instance 'fir_Low' of component 'H_L1_fir_compiler_2' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'H_L1_fir_compiler_2' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/H_L1_fir_compiler_2_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'H_L1_FIR' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'Level_1' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:54]
-INFO: [Synth 8-3491] module 'Modulator' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd:21' bound to instance 'MOD_u' of component 'Modulator' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:439]
-INFO: [Synth 8-638] synthesizing module 'Modulator' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd:47]
-INFO: [Synth 8-256] done synthesizing module 'Modulator' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd:47]
-INFO: [Synth 8-3491] module 'INTERPOLATE_L1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:34' bound to instance 'U_INTERPOLATE_L1' of component 'INTERPOLATE_L1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:469]
-INFO: [Synth 8-638] synthesizing module 'INTERPOLATE_L1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:55]
-INFO: [Synth 8-3491] module 'H_INTP_L1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:34' bound to instance 'U_H_INTP_L1' of component 'H_INTP_L1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:138]
-INFO: [Synth 8-638] synthesizing module 'H_INTP_L1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:52]
-WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:77]
-INFO: [Synth 8-3491] module 'fir_compiler_2' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_2_stub.vhdl:6' bound to instance 'H_L1_fir_up_sample' of component 'fir_compiler_2' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:92]
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_2' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_2_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'H_INTP_L1' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:52]
-INFO: [Synth 8-3491] module 'L_INTP_L1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:34' bound to instance 'U_L_INTP_L1' of component 'L_INTP_L1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:155]
-INFO: [Synth 8-638] synthesizing module 'L_INTP_L1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:52]
-WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:73]
-INFO: [Synth 8-3491] module 'INT_L_L1_fir_compiler' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/INT_L_L1_fir_compiler_stub.vhdl:6' bound to instance 'INT_L_L1' of component 'INT_L_L1_fir_compiler' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:86]
-INFO: [Synth 8-638] synthesizing module 'INT_L_L1_fir_compiler' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/INT_L_L1_fir_compiler_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'L_INTP_L1' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:52]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:170]
-INFO: [Synth 8-256] done synthesizing module 'INTERPOLATE_L1' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:55]
-INFO: [Synth 8-3491] module 'INTERPOLATE_AA' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:34' bound to instance 'U_INTERPOLATE_AA' of component 'INTERPOLATE_AA' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:490]
-INFO: [Synth 8-638] synthesizing module 'INTERPOLATE_AA' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:53]
-WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:75]
-INFO: [Synth 8-3491] module 'fir_compiler_1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_1_stub.vhdl:6' bound to instance 'AA_fir_up_sample_1' of component 'fir_compiler_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:89]
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_1_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'INTERPOLATE_AA' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:53]
-INFO: [Synth 8-3491] module 'AA_Interpolation_48khz' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:34' bound to instance 'U_INTERPOLATE_AA_2' of component 'AA_Interpolation_48khz' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:507]
-INFO: [Synth 8-638] synthesizing module 'AA_Interpolation_48khz' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:54]
-WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:76]
-INFO: [Synth 8-3491] module 'fir_compiler_3' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_3_stub.vhdl:6' bound to instance 'AA_fir_up_sample_2' of component 'fir_compiler_3' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:90]
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_3' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-138868-Nut-Laptop/realtime/fir_compiler_3_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'AA_Interpolation_48khz' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:54]
-INFO: [Synth 8-3491] module 'I2S_out' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:33' bound to instance 'I2s_o' of component 'I2S_out' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:527]
-INFO: [Synth 8-638] synthesizing module 'I2S_out' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:52]
-WARNING: [Synth 8-614] signal 'reset_s' is read in the process but is not in the sensitivity list [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:110]
-WARNING: [Synth 8-614] signal 'locked' is read in the process but is not in the sensitivity list [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:110]
-INFO: [Synth 8-256] done synthesizing module 'I2S_out' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'Data_line_output' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:61]
-WARNING: [Synth 8-5640] Port 'out_valid_h' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:112]
-INFO: [Synth 8-3491] module 'Half_Data_line_Env_fol' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:35' bound to instance 'U_Half_Data_line_Env_fol' of component 'Half_Data_line_Env_fol' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:275]
-INFO: [Synth 8-638] synthesizing module 'Half_Data_line_Env_fol' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:61]
-WARNING: [Synth 8-5640] Port 'sclk_fall_pulse_t' is missing in component declaration [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:130]
-INFO: [Synth 8-3491] module 'I2S_in' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:33' bound to instance 'I2s_i' of component 'I2S_in' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:272]
-INFO: [Synth 8-3491] module 'AA_filter_1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:34' bound to instance 'AA_1' of component 'AA_filter_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:289]
-INFO: [Synth 8-3491] module 'AA_filter_2' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:28' bound to instance 'AA_2' of component 'AA_filter_2' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:303]
-INFO: [Synth 8-3491] module 'Level_1' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:34' bound to instance 'L1' of component 'Level_1' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:316]
-INFO: [Synth 8-3491] module 'Envlope_Follower_control_Logic' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:35' bound to instance 'EV_L_L_1' of component 'Envlope_Follower_control_Logic' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:337]
-INFO: [Synth 8-638] synthesizing module 'Envlope_Follower_control_Logic' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:45]
-INFO: [Synth 8-3491] module 'Envelope_Follower' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:27' bound to instance 'EV' of component 'Envelope_Follower' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:71]
-INFO: [Synth 8-638] synthesizing module 'Envelope_Follower' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:37]
-INFO: [Synth 8-226] default block is never used [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:66]
-INFO: [Synth 8-256] done synthesizing module 'Envelope_Follower' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:37]
-INFO: [Synth 8-256] done synthesizing module 'Envlope_Follower_control_Logic' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:45]
-INFO: [Synth 8-3491] module 'Envlope_Follower_control_Logic' declared at 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:35' bound to instance 'EV_H_L_1' of component 'Envlope_Follower_control_Logic' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:349]
-INFO: [Synth 8-256] done synthesizing module 'Half_Data_line_Env_fol' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:65]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:160]
-WARNING: [Synth 8-6014] Unused sequential element ena_s_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:252]
-WARNING: [Synth 8-6014] Unused sequential element address_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:258]
-WARNING: [Synth 8-6014] Unused sequential element addra_s_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:259]
-WARNING: [Synth 8-6014] Unused sequential element shift_Reg_load_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:154]
-WARNING: [Synth 8-6014] Unused sequential element s_axis_data_tlast_s_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:181]
-WARNING: [Synth 8-6014] Unused sequential element right_valid_cnt_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:116]
-WARNING: [Synth 8-6014] Unused sequential element right_valid_cnt_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:142]
-WARNING: [Synth 8-6014] Unused sequential element sclk_fall_pulse_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:118]
-WARNING: [Synth 8-6014] Unused sequential element sclk_rise_pulse_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:148]
-WARNING: [Synth 8-6014] Unused sequential element test_register_shift_t_reg was removed.  [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:231]
+INFO: [Synth 8-638] synthesizing module 'TOP' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:65]
+INFO: [Synth 8-113] binding component instance 'clk_ibufg_inst' to cell 'IBUFG' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:231]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/clk_wiz_0_stub.vhdl:6' bound to instance 'COMPUTATION_CLOCK' of component 'clk_wiz_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:241]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/clk_wiz_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'Data_line_output' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:35' bound to instance 'U_Data_line_output' of component 'Data_line_output' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:249]
+INFO: [Synth 8-638] synthesizing module 'Data_line_output' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:61]
+INFO: [Synth 8-3491] module 'I2S_in' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:33' bound to instance 'I2s_i' of component 'I2S_in' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:367]
+INFO: [Synth 8-638] synthesizing module 'I2S_in' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:56]
+WARNING: [Synth 8-614] signal 'locked_s' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'I2S_in' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:56]
+INFO: [Synth 8-3491] module 'AA_filter_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:34' bound to instance 'AA_1' of component 'AA_filter_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:394]
+INFO: [Synth 8-638] synthesizing module 'AA_filter_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:48]
+INFO: [Synth 8-3491] module 'AA_1_fir' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/AA_1_fir_stub.vhdl:6' bound to instance 'AA_1' of component 'AA_1_fir' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:92]
+INFO: [Synth 8-638] synthesizing module 'AA_1_fir' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/AA_1_fir_stub.vhdl:21]
+INFO: [Synth 8-226] default block is never used [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:136]
+WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:109]
+INFO: [Synth 8-256] done synthesizing module 'AA_filter_1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:48]
+INFO: [Synth 8-3491] module 'AA_filter_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:28' bound to instance 'AA_2' of component 'AA_filter_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:408]
+INFO: [Synth 8-638] synthesizing module 'AA_filter_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:44]
+WARNING: [Synth 8-5640] Port 'm_axis_data_tlast' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
+WARNING: [Synth 8-5640] Port 'event_s_data_tlast_missing' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
+WARNING: [Synth 8-5640] Port 'event_s_data_tlast_unexpected' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
+WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:91]
+INFO: [Synth 8-3491] module 'fir_compiler_0' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_0_stub.vhdl:6' bound to instance 'fir_0' of component 'fir_compiler_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_0_stub.vhdl:25]
+INFO: [Synth 8-256] done synthesizing module 'AA_filter_2' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:44]
+INFO: [Synth 8-3491] module 'Level_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:34' bound to instance 'L1' of component 'Level_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:421]
+INFO: [Synth 8-638] synthesizing module 'Level_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:54]
+INFO: [Synth 8-3491] module 'L_L1_FIR' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:34' bound to instance 'U_L_L1_FIR' of component 'L_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'L_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:49]
+WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:68]
+INFO: [Synth 8-3491] module 'L_L1_fir_compiler_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/L_L1_fir_compiler_1_stub.vhdl:6' bound to instance 'fir_Low' of component 'L_L1_fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'L_L1_fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/L_L1_fir_compiler_1_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'L_L1_FIR' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:49]
+INFO: [Synth 8-3491] module 'H_L1_FIR' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:34' bound to instance 'U_H_L1_FIR' of component 'H_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:131]
+INFO: [Synth 8-638] synthesizing module 'H_L1_FIR' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:50]
+WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:72]
+INFO: [Synth 8-3491] module 'H_L1_fir_compiler_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/H_L1_fir_compiler_2_stub.vhdl:6' bound to instance 'fir_Low' of component 'H_L1_fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'H_L1_fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/H_L1_fir_compiler_2_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'H_L1_FIR' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'Level_1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:54]
+INFO: [Synth 8-3491] module 'Modulator' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd:21' bound to instance 'MOD_u' of component 'Modulator' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:439]
+INFO: [Synth 8-638] synthesizing module 'Modulator' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'Modulator' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd:47]
+INFO: [Synth 8-3491] module 'INTERPOLATE_L1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:34' bound to instance 'U_INTERPOLATE_L1' of component 'INTERPOLATE_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:469]
+INFO: [Synth 8-638] synthesizing module 'INTERPOLATE_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:55]
+INFO: [Synth 8-3491] module 'H_INTP_L1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:34' bound to instance 'U_H_INTP_L1' of component 'H_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:138]
+INFO: [Synth 8-638] synthesizing module 'H_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:52]
+WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:77]
+INFO: [Synth 8-3491] module 'fir_compiler_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_2_stub.vhdl:6' bound to instance 'H_L1_fir_up_sample' of component 'fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:92]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_2_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'H_INTP_L1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd:52]
+INFO: [Synth 8-3491] module 'L_INTP_L1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:34' bound to instance 'U_L_INTP_L1' of component 'L_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:155]
+INFO: [Synth 8-638] synthesizing module 'L_INTP_L1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:52]
+WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:73]
+INFO: [Synth 8-3491] module 'INT_L_L1_fir_compiler' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/INT_L_L1_fir_compiler_stub.vhdl:6' bound to instance 'INT_L_L1' of component 'INT_L_L1_fir_compiler' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'INT_L_L1_fir_compiler' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/INT_L_L1_fir_compiler_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'L_INTP_L1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd:52]
+WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:170]
+INFO: [Synth 8-256] done synthesizing module 'INTERPOLATE_L1' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd:55]
+INFO: [Synth 8-3491] module 'INTERPOLATE_AA' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:34' bound to instance 'U_INTERPOLATE_AA' of component 'INTERPOLATE_AA' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:490]
+INFO: [Synth 8-638] synthesizing module 'INTERPOLATE_AA' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:53]
+WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:75]
+INFO: [Synth 8-3491] module 'fir_compiler_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_1_stub.vhdl:6' bound to instance 'AA_fir_up_sample_1' of component 'fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_1_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'INTERPOLATE_AA' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd:53]
+INFO: [Synth 8-3491] module 'AA_Interpolation_48khz' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:34' bound to instance 'U_INTERPOLATE_AA_2' of component 'AA_Interpolation_48khz' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:507]
+INFO: [Synth 8-638] synthesizing module 'AA_Interpolation_48khz' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:54]
+WARNING: [Synth 8-5640] Port 'event_s_data_chanid_incorrect' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:76]
+INFO: [Synth 8-3491] module 'fir_compiler_3' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_3_stub.vhdl:6' bound to instance 'AA_fir_up_sample_2' of component 'fir_compiler_3' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_3' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/.Xil/Vivado-54760-Blakes-PC/realtime/fir_compiler_3_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'AA_Interpolation_48khz' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd:54]
+INFO: [Synth 8-3491] module 'I2S_out' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:33' bound to instance 'I2s_o' of component 'I2S_out' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:527]
+INFO: [Synth 8-638] synthesizing module 'I2S_out' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:52]
+WARNING: [Synth 8-614] signal 'reset_s' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:110]
+WARNING: [Synth 8-614] signal 'locked' is read in the process but is not in the sensitivity list [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:110]
+INFO: [Synth 8-256] done synthesizing module 'I2S_out' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'Data_line_output' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd:61]
+WARNING: [Synth 8-5640] Port 'out_valid_h' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:112]
+INFO: [Synth 8-3491] module 'Half_Data_line_Env_fol' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:35' bound to instance 'U_Half_Data_line_Env_fol' of component 'Half_Data_line_Env_fol' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:275]
+INFO: [Synth 8-638] synthesizing module 'Half_Data_line_Env_fol' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:61]
+WARNING: [Synth 8-5640] Port 'sclk_fall_pulse_t' is missing in component declaration [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:130]
+INFO: [Synth 8-3491] module 'I2S_in' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:33' bound to instance 'I2s_i' of component 'I2S_in' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:272]
+INFO: [Synth 8-3491] module 'AA_filter_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:34' bound to instance 'AA_1' of component 'AA_filter_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:289]
+INFO: [Synth 8-3491] module 'AA_filter_2' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd:28' bound to instance 'AA_2' of component 'AA_filter_2' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:303]
+INFO: [Synth 8-3491] module 'Level_1' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd:34' bound to instance 'L1' of component 'Level_1' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:316]
+INFO: [Synth 8-3491] module 'Envlope_Follower_control_Logic' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:35' bound to instance 'EV_L_L_1' of component 'Envlope_Follower_control_Logic' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:337]
+INFO: [Synth 8-638] synthesizing module 'Envlope_Follower_control_Logic' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:45]
+INFO: [Synth 8-3491] module 'Envelope_Follower' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:27' bound to instance 'EV' of component 'Envelope_Follower' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'Envelope_Follower' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:37]
+INFO: [Synth 8-226] default block is never used [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'Envelope_Follower' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'Envlope_Follower_control_Logic' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:45]
+INFO: [Synth 8-3491] module 'Envlope_Follower_control_Logic' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:35' bound to instance 'EV_H_L_1' of component 'Envlope_Follower_control_Logic' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:349]
+INFO: [Synth 8-3491] module 'Envlope_Follower_control_Logic' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:35' bound to instance 'EV_L_R_1' of component 'Envlope_Follower_control_Logic' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:360]
+INFO: [Synth 8-3491] module 'Envlope_Follower_control_Logic' declared at 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd:35' bound to instance 'EV_H_R_1' of component 'Envlope_Follower_control_Logic' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:372]
+INFO: [Synth 8-256] done synthesizing module 'Half_Data_line_Env_fol' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd:65]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:160]
+WARNING: [Synth 8-6014] Unused sequential element ena_s_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:252]
+WARNING: [Synth 8-6014] Unused sequential element address_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:258]
+WARNING: [Synth 8-6014] Unused sequential element addra_s_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:259]
+WARNING: [Synth 8-6014] Unused sequential element shift_Reg_load_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd:154]
+WARNING: [Synth 8-6014] Unused sequential element s_axis_data_tlast_s_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:181]
+WARNING: [Synth 8-6014] Unused sequential element right_valid_cnt_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd:116]
+WARNING: [Synth 8-6014] Unused sequential element right_valid_cnt_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd:142]
+WARNING: [Synth 8-6014] Unused sequential element sclk_fall_pulse_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:118]
+WARNING: [Synth 8-6014] Unused sequential element sclk_rise_pulse_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:148]
+WARNING: [Synth 8-6014] Unused sequential element test_register_shift_t_reg was removed.  [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd:231]
 WARNING: [Synth 8-7129] Port left_valid_in in module H_L1_FIR is either unconnected or has no load
 WARNING: [Synth 8-7129] Port right_valid_in in module H_L1_FIR is either unconnected or has no load
 WARNING: [Synth 8-7129] Port left_valid_in in module L_L1_FIR is either unconnected or has no load
@@ -183,18 +182,18 @@ WARNING: [Synth 8-7129] Port left_valid_in in module H_INTP_L1 is either unconne
 WARNING: [Synth 8-7129] Port right_valid_in in module H_INTP_L1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_tvalid_in in module Modulator is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1563.227 ; gain = 587.848
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1539.414 ; gain = 586.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1563.227 ; gain = 587.848
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1539.414 ; gain = 586.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1563.227 ; gain = 587.848
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1539.414 ; gain = 586.074
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1563.227 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 1539.414 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 WARNING: [Netlist 29-432] The IBUFG primitive 'clk_ibufg_inst' has been retargeted to an IBUF primitive only. No BUFG will be added. If a global buffer is intended, please instantiate an available global clock primitive from the current architecture.
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -202,80 +201,80 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Data_line_output/AA_1/AA_1'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Data_line_output/AA_1/AA_1'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_1/AA_1'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_1/AA_1'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/L1/U_L_L1_FIR/fir_Low'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/L1/U_L_L1_FIR/fir_Low'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/L1/U_H_L1_FIR/fir_Low'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/L1/U_H_L1_FIR/fir_Low'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Data_line_output/AA_2/fir_0'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Data_line_output/AA_2/fir_0'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_2/fir_0'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_2/fir_0'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/fir_compiler_3/fir_compiler_3_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA_2/AA_fir_up_sample_2'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/fir_compiler_3/fir_compiler_3_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA_2/AA_fir_up_sample_2'
-Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'COMPUTATION_CLOCK'
-Finished Parsing XDC File [c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'COMPUTATION_CLOCK'
-Parsing XDC File [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]
-Finished Parsing XDC File [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TOP_propImpl.xdc].
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/L1/U_H_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/L1/U_H_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2/H_L1_fir_compiler_2_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/L1/U_L_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/L1/U_L_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1/L_L1_fir_compiler_1_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Data_line_output/AA_2/fir_0'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Data_line_output/AA_2/fir_0'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_2/fir_0'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_2/fir_0'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Data_line_output/AA_1/AA_1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Data_line_output/AA_1/AA_1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_1/AA_1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir/AA_1_fir_in_context.xdc] for cell 'U_Half_Data_line_Env_fol/AA_1/AA_1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/fir_compiler_3/fir_compiler_3_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA_2/AA_fir_up_sample_2'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/fir_compiler_3/fir_compiler_3_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA_2/AA_fir_up_sample_2'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1/fir_compiler_1_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample'
+Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'COMPUTATION_CLOCK'
+Finished Parsing XDC File [e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'COMPUTATION_CLOCK'
+Parsing XDC File [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]
+Finished Parsing XDC File [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TOP_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1666.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1637.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUFG => IBUF: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1666.203 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1637.824 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/AA_1/AA_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/AA_1/AA_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/L1/U_L_L1_FIR/fir_Low. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/L1/U_H_L1_FIR/fir_Low. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/L1/U_H_L1_FIR/fir_Low. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/L1/U_L_L1_FIR/fir_Low. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/L1/U_L_L1_FIR/fir_Low. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/AA_2/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/AA_2/fir_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/AA_1/AA_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/AA_1/AA_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_AA_2/AA_fir_up_sample_2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_AA/AA_fir_up_sample_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_L1/U_L_INTP_L1/INT_L_L1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_L1/U_H_INTP_L1/H_L1_fir_up_sample. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/AA_2/fir_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_Half_Data_line_Env_fol/AA_2/fir_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for U_Data_line_output/U_INTERPOLATE_AA_2/AA_fir_up_sample_2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for COMPUTATION_CLOCK. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Modulator'
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'Envelope_Follower'
-WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:126]
+WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:126]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -285,7 +284,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [C:/Users/n
            assign_output |                             1000 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'Modulator'
-WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:126]
+WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd:126]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -296,7 +295,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [C:/Users/n
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'one-hot' in module 'Envelope_Follower'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -304,20 +303,20 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   34 Bit       Adders := 2     
-	   2 Input   33 Bit       Adders := 6     
+	   2 Input   33 Bit       Adders := 8     
 	   2 Input   32 Bit       Adders := 6     
-	   2 Input   19 Bit       Adders := 2     
-	   2 Input   18 Bit       Adders := 2     
-	   2 Input   16 Bit       Adders := 2     
+	   2 Input   19 Bit       Adders := 4     
+	   2 Input   18 Bit       Adders := 4     
+	   2 Input   16 Bit       Adders := 4     
 +---Registers : 
 	               49 Bit    Registers := 4     
 	               34 Bit    Registers := 2     
-	               32 Bit    Registers := 61    
+	               32 Bit    Registers := 65    
 	               24 Bit    Registers := 6     
-	               18 Bit    Registers := 16    
-	               15 Bit    Registers := 2     
+	               18 Bit    Registers := 32    
+	               15 Bit    Registers := 4     
 	                2 Bit    Registers := 6     
-	                1 Bit    Registers := 52    
+	                1 Bit    Registers := 54    
 +---Multipliers : 
 	              18x32  Multipliers := 4     
 +---Muxes : 
@@ -326,18 +325,18 @@ Detailed RTL Component Info :
 	   3 Input   32 Bit        Muxes := 4     
 	   4 Input   32 Bit        Muxes := 1     
 	   4 Input   24 Bit        Muxes := 4     
-	   2 Input   18 Bit        Muxes := 8     
-	   2 Input   15 Bit        Muxes := 2     
-	   4 Input   15 Bit        Muxes := 2     
-	   4 Input    4 Bit        Muxes := 3     
-	   2 Input    4 Bit        Muxes := 9     
-	   4 Input    2 Bit        Muxes := 6     
+	   2 Input   18 Bit        Muxes := 16    
+	   2 Input   15 Bit        Muxes := 4     
+	   4 Input   15 Bit        Muxes := 4     
+	   4 Input    4 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 17    
+	   4 Input    2 Bit        Muxes := 8     
 	   3 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 7     
 	   5 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 90    
-	   4 Input    1 Bit        Muxes := 25    
-	   6 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 126   
+	   4 Input    1 Bit        Muxes := 33    
+	   6 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -390,6 +389,18 @@ DSP Report: operator EV/arg is absorbed into DSP EV/arg.
 DSP Report: Generating DSP EV/arg, operation Mode is: A2*B.
 DSP Report: register EV/rectified_fx_reg is absorbed into DSP EV/arg.
 DSP Report: operator EV/arg is absorbed into DSP EV/arg.
+DSP Report: Generating DSP EV/arg, operation Mode is: A2*B.
+DSP Report: register EV/feedback_fx_reg is absorbed into DSP EV/arg.
+DSP Report: operator EV/arg is absorbed into DSP EV/arg.
+DSP Report: Generating DSP EV/arg, operation Mode is: A2*B.
+DSP Report: register EV/rectified_fx_reg is absorbed into DSP EV/arg.
+DSP Report: operator EV/arg is absorbed into DSP EV/arg.
+DSP Report: Generating DSP EV/arg, operation Mode is: A2*B.
+DSP Report: register EV/feedback_fx_reg is absorbed into DSP EV/arg.
+DSP Report: operator EV/arg is absorbed into DSP EV/arg.
+DSP Report: Generating DSP EV/arg, operation Mode is: A2*B.
+DSP Report: register EV/rectified_fx_reg is absorbed into DSP EV/arg.
+DSP Report: operator EV/arg is absorbed into DSP EV/arg.
 WARNING: [Synth 8-7129] Port left_valid_in in module Level_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port right_valid_in in module Level_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port reset in module AA_filter_2 is either unconnected or has no load
@@ -422,7 +433,7 @@ WARNING: [Synth 8-7129] Port right_valid_in in module AA_filter_2__xdcDup__1 is 
 WARNING: [Synth 8-3332] Sequential element (AA_1/next_state_reg[1]) is unused and will be removed from module Data_line_output.
 WARNING: [Synth 8-3332] Sequential element (AA_1/next_state_reg[1]) is unused and will be removed from module Half_Data_line_Env_fol.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
  Sort Area is  arg_0 : 0 0 : 2661 4789 : Used 1 time 0
  Sort Area is  arg_0 : 0 1 : 2128 4789 : Used 1 time 0
@@ -434,8 +445,12 @@ Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elaps
  Sort Area is  arg_5 : 0 1 : 2128 4789 : Used 1 time 0
  Sort Area is  EV/arg_6 : 0 0 : 2158 2158 : Used 1 time 0
  Sort Area is  EV/arg_a : 0 0 : 2158 2158 : Used 1 time 0
+ Sort Area is  EV/arg_c : 0 0 : 2158 2158 : Used 1 time 0
+ Sort Area is  EV/arg_e : 0 0 : 2158 2158 : Used 1 time 0
  Sort Area is  EV/arg_8 : 0 0 : 1943 1943 : Used 1 time 0
  Sort Area is  EV/arg_b : 0 0 : 1943 1943 : Used 1 time 0
+ Sort Area is  EV/arg_d : 0 0 : 1943 1943 : Used 1 time 0
+ Sort Area is  EV/arg_f : 0 0 : 1943 1943 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -456,6 +471,10 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 |Envlope_Follower_control_Logic | A2*B           | 18     | 16     | -      | -      | 34     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |Envlope_Follower_control_Logic | A2*B           | 18     | 15     | -      | -      | 33     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |Envlope_Follower_control_Logic | A2*B           | 18     | 16     | -      | -      | 34     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A2*B           | 18     | 15     | -      | -      | 33     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A2*B           | 18     | 16     | -      | -      | 34     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A2*B           | 18     | 15     | -      | -      | 33     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A2*B           | 18     | 16     | -      | -      | 34     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 +-------------------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -466,19 +485,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:39 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -496,37 +515,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -538,12 +557,16 @@ DSP Final Report (the ' indicates corresponding REG is set)
 +-------------------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Modulator                      | A'*B'          | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
 |Modulator                      | PCIN>>17+A'*B' | 17     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|Modulator                      | A'*B           | 17     | 0      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
-|Modulator                      | PCIN>>17+A*B'  | 0      | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |Modulator                      | A'*B'          | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
 |Modulator                      | PCIN>>17+A'*B' | 17     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|Modulator                      | A'*B           | 17     | 0      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
-|Modulator                      | PCIN>>17+A*B'  | 0      | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Modulator                      | A'*B'          | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|Modulator                      | PCIN>>17+A'*B' | 17     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|Modulator                      | A'*B'          | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|Modulator                      | PCIN>>17+A'*B' | 17     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A'*B'          | 18     | 14     | -      | -      | 33     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A'*B           | 18     | 15     | -      | -      | 34     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A'*B'          | 18     | 14     | -      | -      | 33     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|Envlope_Follower_control_Logic | A'*B           | 18     | 15     | -      | -      | 34     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |Envlope_Follower_control_Logic | A'*B'          | 18     | 14     | -      | -      | 33     | 1    | 1    | -    | -    | -     | 0    | 0    | 
 |Envlope_Follower_control_Logic | A'*B           | 18     | 15     | -      | -      | 34     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |Envlope_Follower_control_Logic | A'*B'          | 18     | 14     | -      | -      | 33     | 1    | 1    | -    | -    | -     | 0    | 0    | 
@@ -583,46 +606,46 @@ Report Cell Usage:
 |11    |fir_compiler_1_bbox        |     1|
 |12    |fir_compiler_2_bbox        |     1|
 |13    |fir_compiler_3_bbox        |     1|
-|14    |CARRY4                     |   233|
-|15    |DSP48E1                    |    12|
-|18    |LUT1                       |   102|
-|19    |LUT2                       |   733|
-|20    |LUT3                       |   710|
-|21    |LUT4                       |   143|
-|22    |LUT5                       |   110|
-|23    |LUT6                       |   286|
-|24    |MUXF7                      |     1|
-|25    |FDCE                       |   673|
-|26    |FDRE                       |  1828|
-|27    |FDSE                       |     3|
-|28    |IBUF                       |     3|
-|29    |IBUFG                      |     1|
-|30    |OBUF                       |    10|
+|14    |CARRY4                     |   317|
+|15    |DSP48E1                    |    16|
+|17    |LUT1                       |   146|
+|18    |LUT2                       |  1005|
+|19    |LUT3                       |   816|
+|20    |LUT4                       |   191|
+|21    |LUT5                       |   150|
+|22    |LUT6                       |   292|
+|23    |MUXF7                      |     1|
+|24    |FDCE                       |   673|
+|25    |FDRE                       |  2282|
+|26    |FDSE                       |     5|
+|27    |IBUF                       |     3|
+|28    |IBUFG                      |     1|
+|29    |OBUF                       |    10|
 +------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.824 ; gain = 684.484
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1666.203 ; gain = 587.848
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1666.203 ; gain = 690.824
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:43 . Memory (MB): peak = 1637.824 ; gain = 586.074
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1637.824 ; gain = 684.484
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1666.203 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 247 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1637.824 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 335 Unisim elements for replacement
 WARNING: [Netlist 29-432] The IBUFG primitive 'clk_ibufg_inst' has been retargeted to an IBUF primitive only. No BUFG will be added. If a global buffer is intended, please instantiate an available global clock primitive from the current architecture.
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1666.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1637.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUFG => IBUF: 1 instance 
 
-Synth Design complete | Checksum: 17d9da20
+Synth Design complete | Checksum: 9e4df1e2
 INFO: [Common 17-83] Releasing license: Synthesis
-108 Infos, 95 Warnings, 0 Critical Warnings and 0 Errors encountered.
+110 Infos, 94 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1666.203 ; gain = 1096.609
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1666.203 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/TOP.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:52 . Memory (MB): peak = 1637.824 ; gain = 1090.789
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1637.824 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/TOP.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Apr 12 00:50:49 2026...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 14 23:22:16 2026...

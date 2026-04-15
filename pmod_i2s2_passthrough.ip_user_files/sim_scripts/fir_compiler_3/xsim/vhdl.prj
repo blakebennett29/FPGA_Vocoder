@@ -1,5 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/sim/fir_compiler_3.vhd" \
-
-# Do not sort compile order
-nosort

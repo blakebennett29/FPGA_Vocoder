@@ -3,5 +3,26 @@
 
 # XDC: new/Constraints.xdc
 
+# IP: ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==H_L1_fir_compiler_2 || ORIG_REF_NAME==H_L1_fir_compiler_2} -quiet] -quiet
+
+# IP: ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==L_L1_fir_compiler_1 || ORIG_REF_NAME==L_L1_fir_compiler_1} -quiet] -quiet
+
+# IP: ip/fir_compiler_0/fir_compiler_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fir_compiler_0 || ORIG_REF_NAME==fir_compiler_0} -quiet] -quiet
+
 # IP: ip/AA_1_fir/AA_1_fir.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AA_1_fir || ORIG_REF_NAME==AA_1_fir} -quiet] -quiet
+
+# IP: ip/fir_compiler_3/fir_compiler_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fir_compiler_3 || ORIG_REF_NAME==fir_compiler_3} -quiet] -quiet
+
+# IP: ip/fir_compiler_1/fir_compiler_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fir_compiler_1 || ORIG_REF_NAME==fir_compiler_1} -quiet] -quiet
+
+# IP: ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==INT_L_L1_fir_compiler || ORIG_REF_NAME==INT_L_L1_fir_compiler} -quiet] -quiet
+
+# IP: ip/fir_compiler_2/fir_compiler_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fir_compiler_2 || ORIG_REF_NAME==fir_compiler_2} -quiet] -quiet

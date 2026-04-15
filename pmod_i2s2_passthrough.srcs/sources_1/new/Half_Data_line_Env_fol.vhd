@@ -354,28 +354,28 @@ EV_H_L_1: Envlope_Follower_control_Logic Port map(
             env_out => Env_fol_out_H_s,
             out_valid => out_valid_H_s
              );
-----==================
-----EV follower passthrough test
-----====================
---EV_L_R_1: Envlope_Follower_control_Logic Port map(
---            env_in => L_L1_output_right_s(26 downto 9),
---            env_start => m_tdata_valid_out_L1_s,
---            env_clk => comp_clk,
---            env_rst => reset,
---            env_out => Env_fol_out_L_R_s,
---            out_valid => out_valid_L_R_s
---             );
+--==================
+--EV follower passthrough test
+--====================
+EV_L_R_1: Envlope_Follower_control_Logic Port map(
+            env_in => L_L1_output_right_s(26 downto 9),
+            env_start => m_tdata_valid_out_L1_s,
+            env_clk => comp_clk,
+            env_rst => reset,
+            env_out => Env_fol_out_L_R_s,
+            out_valid => out_valid_L_R_s
+             );
 
-----==================
-----EV follower passthrough test
-----====================
---EV_H_R_1: Envlope_Follower_control_Logic Port map(
---            env_in => H_L1_output_right_s(26 downto 9),
---            env_start => m_tdata_valid_out_H1_s,
---            env_clk => comp_clk,
---            env_rst => reset,
---            env_out => Env_fol_out_H_R_s,
---            out_valid => out_valid_H_R_s
---             );          
+--==================
+--EV follower passthrough test
+--====================
+EV_H_R_1: Envlope_Follower_control_Logic Port map(
+            env_in => H_L1_output_right_s(26 downto 9),
+            env_start => m_tdata_valid_out_H1_s,
+            env_clk => comp_clk,
+            env_rst => reset,
+            env_out => Env_fol_out_H_R_s,
+            out_valid => out_valid_H_R_s
+             );          
          
 end Behavioral;

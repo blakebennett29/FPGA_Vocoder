@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.runs/synth_1/TOP.tcl"
+  variable script "E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.runs/synth_1/TOP.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,8 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 8
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -65,81 +63,87 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.xpr} [current_project]
+set_property webtalk.parent_dir E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.cache/wt [current_project]
+set_property parent.project_path E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo {c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.cache/ip} [current_project]
+set_property board_part_repo_paths {C:/Users/20bbe/AppData/Roaming/Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store} [current_project]
+set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
+set_property ip_output_repo e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.ip_user_files/sin.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_0/AA_2x.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_1/AA.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_2/high.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/INT_L_L1_fir_compiler/low.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/blk_mem_gen_0/sine02.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/aa_filter_127tap_48kcutoff_fs196k_gain2x_q23.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/aa_filter_127tap_48kcutoff_fs196k_q23.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/L_L1_fir_compiler_1/low_2x_new.coe}}
-add_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/H_L1_fir_compiler_2/high_2x_new.coe}}
-read_vhdl -library xil_defaultlib {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd}}
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.ip_user_files/sin.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_0/AA_2x.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_1/AA.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_2/high.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/INT_L_L1_fir_compiler/low.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/blk_mem_gen_0/sine02.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/aa_filter_127tap_48kcutoff_fs196k_gain2x_q23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/aa_filter_127tap_48kcutoff_fs196k_q23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/L_L1_fir_compiler_1/low_2x_new.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/H_L1_fir_compiler_2/high_2x_new.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/LP_split_fs48k_fc12k_g2_q1_23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/HP_split_fs48k_fc12k_neg1n_g2_q1_23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/HP_split_fs48k_fc12k_neg1n_g1_q1_23.coe
+add_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/generated_coe/LP_split_fs48k_fc12k_g1_q1_23.coe
+read_vhdl -library xil_defaultlib E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_Interpolation_48khz.vhd
 read_vhdl -vhdl2008 -library xil_defaultlib {
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd}
-  {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd}
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_1.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/AA_filter_2.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Data_line_output.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envelope_Follower.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Envlope_Follower_control_Logic.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_INTP_L1.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/H_L1_FIR.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Half_Data_line_Env_fol.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_in.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/I2S_out.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_AA.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/INTERPOLATE_L1.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_INTP_L1.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/L_L1_FIR.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Level_1.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/Modulator.vhd
+  E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/new/TOP.vhd
 }
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/AA_1_fir/AA_1_fir.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/L_L1_fir_compiler_1/L_L1_fir_compiler_1_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/H_L1_fir_compiler_2/H_L1_fir_compiler_2_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_1/fir_compiler_1.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/AA_1_fir/AA_1_fir.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/AA_1_fir/AA_1_fir_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_3/fir_compiler_3.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/fir_compiler_3_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_2/fir_compiler_2.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_1/fir_compiler_1.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_1/fir_compiler_1_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/INT_L_L1_fir_compiler/INT_L_L1_fir_compiler_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_3/fir_compiler_3.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/constraints/fir_compiler_v7_2.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_3/fir_compiler_3_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/fir_compiler_2/fir_compiler_2.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/constraints/fir_compiler_v7_2.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/fir_compiler_2/fir_compiler_2_ooc.xdc]
 
-read_ip -quiet {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc}}]
+read_ip -quiet E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all e:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -150,14 +154,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc}}]
+read_xdc E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc
+set_property used_in_implementation false [get_files E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp}
+read_checkpoint -auto_incremental -incremental E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/utils_1/imports/synth_1/i2s_in_out.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

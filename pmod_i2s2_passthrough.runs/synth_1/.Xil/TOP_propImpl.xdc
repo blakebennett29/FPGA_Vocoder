@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:{C:/Users/natha/OneDrive/Documents/Senior Project/FPGA Code/I2s_in_out/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc} rfile:../../../pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:E:/School/SeniorProject/pmod_i2s2_passthrough/pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc rfile:../../../pmod_i2s2_passthrough.srcs/constrs_1/new/Constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W4 [get_ports clk]
 set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]

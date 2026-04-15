@@ -1,1 +1,0 @@
---incr --debug typical --relax --mt 2  -L xbip_utils_v3_0_13 -L axi_utils_v2_0_9 -L fir_compiler_v7_2_22 -L xil_defaultlib -L secureip -L xpm --snapshot fir_compiler_1 xil_defaultlib.fir_compiler_1 -log elaborate.log
