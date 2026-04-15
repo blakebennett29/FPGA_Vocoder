@@ -39,7 +39,11 @@ This creates a foundation for features such as:
 
 ---
 # Hardware Box
-![Full_product](docs/Board_in_Box.jpg)
+![Full_product](docs/Board_in_Box.jpg)          
+
+#circuit Board
+
+![circuit_Board](docs/Curcit_Board.jpg)
 ## Hardware Platform
 
 This design is built around:
@@ -470,9 +474,7 @@ That makes the project a strong foundation for future FPGA-based audio DSP work.
 
 
 ---
-#circuit Board
 
-![circuit_Board](docs/Curcit_Board.jpg)
 ## Author
 
 Senior FPGA audio processing project focused on real-time I2S streaming, multirate FIR filtering, and efficient multiband architecture design.
