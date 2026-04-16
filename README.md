@@ -38,6 +38,9 @@ This creates a foundation for features such as:
 * Future DSP experimentation in hardware
 
 ---
+
+<!-- Add better board photo later 
+
 <h1>Hardware Box and Circuit Board</h1>
 
 <h1>Hardware Overview</h1>
@@ -55,6 +58,7 @@ This creates a foundation for features such as:
   </tr>
 </table>
 
+-->
 
 ## Hardware Platform
 
